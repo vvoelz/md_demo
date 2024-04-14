@@ -1,17 +1,26 @@
 # md_demo
-Demo for preparing and runnng molecular dynamics in GROMACS for a receptor ligand system
+Demo for preparing and running molecular dynamics in GROMACS for a receptor ligand system: human acetylcholinesterase in complex with known inhibitors. 
 
-## Setup
- 
+## Requirements
+
+For this demo, you will need:
+* Anaconda Python ([conda](https://docs.anaconda.com/free/anaconda/install/) )
+* GROMACS ([gromacs.org](https://www.gromacs.org))
+* The Open Force Field Toolkit (https://github.com/openforcefield/openff-toolkit)  
+
+### conda 
+
 If you haven't already, install the latest version of the Anaconda Python distribution [conda](https://docs.conda.io/projects/conda/en/stable/), or [miniconda](https://docs.anaconda.com/free/miniconda/).
 
-NOTE: The installation package is a large `*.sh` file 
-[https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh].
-You can either download this to your local machine and `scp` to Owlsnest, or download it directly using `wget`.
-
-In the [vina_demo](https://github.com/vvoelz/vina_demo) repository, we created a conda enviroment called `vina` to prepare the receptor and ligands.  We will use this same enviroment for the gnina work here.
-
+NOTE: The installation package is a large `*.sh` file (e.g. [https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh] ).  You can download this and install from your UNIX shell on Owlsnest, using:   
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh   # download the *.sh installer
+bash Miniconda3-latest-Linux-x86_64.sh   # run the installer and follow the directions.  Answer 'yes' to all the questions!
+```
 ## Create and set up your conda environment 
+
+The the created a conda enviroment called `vina` to prepare the receptor and ligands.  We will use this same enviroment for the gnina work here.
+
 
 ```
 conda create --name vina
