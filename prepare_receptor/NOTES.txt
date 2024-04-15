@@ -1,0 +1,16 @@
+According to the PROPKA and addH (ChimeraX) calculation, the histidines should be protonated like so:
+
+
+HIS A 212: HIP
+HIS A 223: HIE
+HIS A 253: HIE
+HIS A 284: HIE 
+HIS A 287: HIE
+HIS A 322: HIP    ; on the surface -- go with PROPKA here
+HIS A 381: HID
+HIS A 387: HIE
+HIS A 405: HID  
+HIS A 432: HIE
+HIS A 447: HID    ; in catalytic triad; must be HID
+
+
