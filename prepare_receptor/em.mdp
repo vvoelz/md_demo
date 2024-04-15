@@ -1,7 +1,8 @@
 ; Parameters describing what to do, when to stop and what to save
 integrator      = steep     ; Algorithm (steep = steepest descent minimization)
-nsteps          = 500       ; Maximum number of (minimization) steps to perform
-nstxout         = 10
+nsteps          = 5000       ; Maximum number of (minimization) steps to perform
+nstxout         = 50
+emtol           = 10.0
 
 ; Parameters describing how to find the neighbors of each atom and how to calculate the interactions
 nstlist         = 1             ; Frequency to update the neighbour list and long range forces

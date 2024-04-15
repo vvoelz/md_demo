@@ -12,4 +12,8 @@ gmx grompp -f em.mdp -c receptor_solvated.gro -r receptor_solvated.gro -p topol.
 # use the tpr to add counterions
 gmx genion -s em.tpr -p topol.top -o receptor_solvated_ions.gro -conc 0.100 -neutral  # choose group SOL
 
+# Minimize the solvated system
+gmx grompp -f em.mdp -c receptor_solvated_ions.gro -r receptor_solvated_ions.gro -p topol.top -o em.tpr -v -maxwarn 2
+gmx mdrun  -v -s em.tpr -c em.gro
+
 
