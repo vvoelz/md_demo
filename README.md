@@ -17,31 +17,32 @@ NOTE: The installation package is a large `*.sh` file (e.g. [https://repo.anacon
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh   # download the *.sh installer
 bash Miniconda3-latest-Linux-x86_64.sh   # run the installer and follow the directions.  Answer 'yes' to all the questions!
 ```
-## Create and set up your conda environment 
+#### Create and set up your conda environment 
 
 The the created a conda enviroment called `vina` to prepare the receptor and ligands.  We will use this same enviroment for the gnina work here.
 
-
 ```
-conda create --name vina
-conda activate vina
+conda create --name mdsim
+conda activate mdsim
 ```
 
 And install the following packages:
-* bioconda
-* mgltools
 * openbabel
-* zlib
 * pandas
+* openff-toolkit
 
 ```
-conda install -c conda-forge -c bioconda mgltools openbabel zlib pandas --yes
+conda install -c conda-forge openbabel pandas --yes
+```
+```
+conda install -c conda-forge openff-toolkit
 ```
 
-If you don't already have `wget` installed (use `which wget` to check), install it:
+### GROMACS
 
+On Owlsnest, GROMACS 2020.3 is already installed, and you can load in into your path using
 ```
-pip install wget
+module load gromacs/2020.3
 ```
 
 ##  Next Steps
