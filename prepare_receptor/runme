@@ -1,1 +1,15 @@
+# Create a molecular topology for the receptor
 gmx pdb2gmx -f ../input_files/receptor_complete_noE20_addH.pdb -ignh -his -o receptor.gro
+
+# put receptor pbc box with some margins
+gmx editconf -f receptor.gro -bt cubic -d 1.0 -o receptor_box.gro
+
+# Add solvent
+gmx solvate -cp receptor_box.gro -p topol.top -o receptor_solvated.gro
+
+# Grompp to get a tpr
+gmx grompp -f em.mdp -c receptor_solvated.gro -r receptor_solvated.gro -p topol.top -o em.tpr -v -maxwarn 2
+# use the tpr to add counterions
+gmx genion -s em.tpr -p topol.top -o receptor_solvated_ions.gro -conc 0.100 -neutral  # choose group SOL
+
+
