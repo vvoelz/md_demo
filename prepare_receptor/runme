@@ -18,6 +18,6 @@ gmx mdrun  -v -s em.tpr -c em.gro
 
 # Temperature equilibrate the system
 gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr -v -maxwarn 2
-gmx mdrun  -v -s nvt.tpr -c nvt.gro
+gmx mdrun  -v -s nvt.tpr -c nvt.gro -g nvt.log -e nvt.edr -o nvt.trr -x
 
 
