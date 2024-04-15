@@ -16,4 +16,8 @@ gmx genion -s em.tpr -p topol.top -o receptor_solvated_ions.gro -conc 0.100 -neu
 gmx grompp -f em.mdp -c receptor_solvated_ions.gro -r receptor_solvated_ions.gro -p topol.top -o em.tpr -v -maxwarn 2
 gmx mdrun  -v -s em.tpr -c em.gro
 
+# Temperature equilibrate the system
+gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr -v -maxwarn 2
+gmx mdrun  -v -s nvt.tpr -c nvt.gro
+
 
