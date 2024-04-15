@@ -1,1 +1,1 @@
-gmx pdb2gmx -f ../input_files/receptor_complete_noE20.pdb -ignh -o test
+gmx pdb2gmx -f ../input_files/receptor_complete_noE20_addH.pdb -ignh -his -o receptor.gro
