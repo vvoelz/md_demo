@@ -33,9 +33,8 @@ And install the following packages:
 
 ```
 conda install -c conda-forge openbabel pandas --yes
-```
-```
 conda install -c conda-forge openff-toolkit
+conda install --yes -c conda-forge "openff-forcefields >=2.0.0"
 ```
 
 ### GROMACS
