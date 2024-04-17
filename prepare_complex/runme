@@ -1,5 +1,20 @@
+### Using a text editor, VAV made a complex.gro (8321 atoms) and complex.top
+
 # put receptor pbc box with some margins
-gmx editconf -f receptor.gro -bt cubic -d 1.0 -o receptor_box.gro
+gmx editconf -f complex.gro -bt cubic -d 1.0 -o complex_box.gro
+
+# Let's just see if the topology works...
+# Try to grompp the complex
+gmx grompp -f em.mdp -c complex_box.gro -r complex_box.gro -p complex.top -o em.tpr -v -maxwarn 2
+# gmx mdrun  -v -s em.tpr -c em.gro
+#
+# # Make sure the confout.gto file has clustered periodic images
+# gmx trjcon v -s em.tpr -f confout.gro -pbc cluster -o confout_cluster.gro
+
+
+
+
+######################
 
 # Add solvent
 gmx solvate -cp receptor_box.gro -p topol.top -o receptor_solvated.gro
