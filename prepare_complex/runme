@@ -1,32 +1,50 @@
-### Using a text editor, VAV made a complex.gro (8321 atoms) and complex.top
+# Using a text editor, VAV made a complex.gro (8321 atoms) and complex.top ...
+# the gro has renamed atoms for the LIG
+# .. this includes LIG.itp with position restaints on C5, C8 and C17
 
 # put receptor pbc box with some margins
-gmx editconf -f complex.gro -bt cubic -d 1.0 -o complex_box.gro
+### NOTE -d 1.2 nm margins to adhere to guidelines on charge-changing mutations by Petrov, de Groot et al JCTC 2024
+gmx editconf -f complex.gro -bt cubic -d 1.2 -o complex_box.gro
 
-# Next, put position restraints on the ligand!
-# # [ do this here ]
+## THEN (TO DO) 
+# Assess whether there is a net charge...
+# IF so, add it to the LIG structure and topology, and put it in the corner of the box (2A from each edge, say)
+# restraint the ion with a non-alchemical restraint.
+# ### VAV TO DO WEd April 17, 2024 ###
+
+
 
 # Let's just see if the topology works...
 # Try to grompp the complex
 gmx grompp -f em.mdp -c complex_box.gro -r complex_box.gro -p complex.top -o em.tpr -v -maxwarn 2
 gmx mdrun  -v -s em.tpr -c em.gro -e em.edr -g em.log -o em.trr
 
+# Next, we're going to run an EE simulation just to see if it works with rest+vdw+coul decoupling!
+# gmx grompp -f ee_test.mdp -c em.gro -r em.gro -p complex.top -o ee_test.tpr -v -maxwarn 2
+# gmx mdrun -v -s ee_test.tpr -c ee_test.gro -g ee_test.log -o ee_test.trr -x ee_test.xtc -dhdl ee_test.dhdl
+#
+
+
 
 ######################
 
 # Add solvent
-gmx solvate -cp receptor_box.gro -p topol.top -o receptor_solvated.gro
+gmx solvate -cp em.gro -p complex.top -o complex_solvated.gro
 
 # Grompp to get a tpr
-gmx grompp -f em.mdp -c receptor_solvated.gro -r receptor_solvated.gro -p topol.top -o em.tpr -v -maxwarn 2
+gmx grompp -f em.mdp -c complex_solvated.gro -r complex_solvated.gro -p complex.top -o temp.tpr -v -maxwarn 2
 # use the tpr to add counterions
-gmx genion -s em.tpr -p topol.top -o receptor_solvated_ions.gro -conc 0.100 -neutral  # choose group SOL
+gmx genion -s temp.tpr -p complex.top -o complex_solvated_ions.gro -conc 0.100 -neutral  # choose group SOL
 
 # Minimize the solvated system
-gmx grompp -f em.mdp -c receptor_solvated_ions.gro -r receptor_solvated_ions.gro -p topol.top -o em.tpr -v -maxwarn 2
-gmx mdrun  -v -s em.tpr -c em.gro
+gmx grompp -f em.mdp -c complex_solvated_ions.gro -r complex_solvated_ions.gro -p complex.top -o em_solv_ions.tpr -v -maxwarn 2
+gmx mdrun -v -s em_solv_ions.tpr -c em_solv_ions.gro -g em_solv_ions.log -o em_solv_ions.trr
 
 # Temperature equilibrate the system
-gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr -v -maxwarn 2
-gmx mdrun  -v -s nvt.tpr -c nvt.gro -g nvt.log -e nvt.edr -o nvt.trr -x
+gmx grompp -f nvt.mdp -c em_solv_ions.gro -r complex_solvated_ions.gro -p complex.top -o nvt.tpr -v -maxwarn 2
+gmx mdrun -v -s nvt.tpr -c nvt.gro -g nvt.log -e nvt.edr -o nvt.trr -x nvt.xtc
+
+# Pressure equilibrate the system
+gmx grompp -f npt.mdp -c nvt.gro -r complex_solvated_ions.gro -p complex.top -o npt.tpr -v -maxwarn 2
+gmx mdrun -v -s npt.tpr -c npt.gro -g npt.log -e npt.edr -o npt.trr -x npt.xtc
 
