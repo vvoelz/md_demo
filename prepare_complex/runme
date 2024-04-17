@@ -1,0 +1,19 @@
+# put receptor pbc box with some margins
+gmx editconf -f receptor.gro -bt cubic -d 1.0 -o receptor_box.gro
+
+# Add solvent
+gmx solvate -cp receptor_box.gro -p topol.top -o receptor_solvated.gro
+
+# Grompp to get a tpr
+gmx grompp -f em.mdp -c receptor_solvated.gro -r receptor_solvated.gro -p topol.top -o em.tpr -v -maxwarn 2
+# use the tpr to add counterions
+gmx genion -s em.tpr -p topol.top -o receptor_solvated_ions.gro -conc 0.100 -neutral  # choose group SOL
+
+# Minimize the solvated system
+gmx grompp -f em.mdp -c receptor_solvated_ions.gro -r receptor_solvated_ions.gro -p topol.top -o em.tpr -v -maxwarn 2
+gmx mdrun  -v -s em.tpr -c em.gro
+
+# Temperature equilibrate the system
+gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr -v -maxwarn 2
+gmx mdrun  -v -s nvt.tpr -c nvt.gro -g nvt.log -e nvt.edr -o nvt.trr -x
+
