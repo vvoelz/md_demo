@@ -1,5 +1,5 @@
 Gromacs Runs On Most of All Computer Systems
- 8351
+ 8354
     2GLY      N    1   0.152  -3.522   7.528
     2GLY     H1    2   0.167  -3.579   7.608
     2GLY     H2    3   0.121  -3.431   7.557
@@ -8351,4 +8351,7 @@ Gromacs Runs On Most of All Computer Systems
     1LIG    H56   56  -2.168  -4.088   2.722
     1LIG    H57   57  -1.999  -4.057   2.768
     1LIG    H58   58  -2.062  -4.224   2.767
+    1LIG    DM1   59  -1.812  -4.222   2.661
+    1LIG    DM2   60  -1.450  -4.348   2.642
+    1LIG    DM3   61  -1.096  -4.654   3.139
    5.91301   6.23117   8.12038
