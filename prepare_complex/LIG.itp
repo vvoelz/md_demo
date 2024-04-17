@@ -4,64 +4,68 @@
 
 [ atoms ]
 ;index, atom type, resnum, resname, name, cgnr, charge, mass
-     1 ligand_xtal_pose.pdb_0       1 ligand_xtal_pose.pdb C          1      0.087117275862     12.010780000000
-     2 ligand_xtal_pose.pdb_1       1 ligand_xtal_pose.pdb C          1      0.159117275862     12.010780000000
-     3 ligand_xtal_pose.pdb_2       1 ligand_xtal_pose.pdb C          1     -0.187982724138     12.010780000000
-     4 ligand_xtal_pose.pdb_3       1 ligand_xtal_pose.pdb C          1     -0.039282724138     12.010780000000
-     5 ligand_xtal_pose.pdb_4       1 ligand_xtal_pose.pdb C          1     -0.208582724138     12.010780000000
-     6 ligand_xtal_pose.pdb_5       1 ligand_xtal_pose.pdb C          1     -0.100982724138     12.010780000000
-     7 ligand_xtal_pose.pdb_6       1 ligand_xtal_pose.pdb C          1      0.606717275862     12.010780000000
-     8 ligand_xtal_pose.pdb_7       1 ligand_xtal_pose.pdb C          1     -0.176682724138     12.010780000000
-     9 ligand_xtal_pose.pdb_8       1 ligand_xtal_pose.pdb C          1     -0.032082724138     12.010780000000
-    10 ligand_xtal_pose.pdb_9       1 ligand_xtal_pose.pdb C          1     -0.064382724138     12.010780000000
-    11 ligand_xtal_pose.pdb_10       1 ligand_xtal_pose.pdb C          1     -0.072682724138     12.010780000000
-    12 ligand_xtal_pose.pdb_11       1 ligand_xtal_pose.pdb C          1     -0.106882724138     12.010780000000
-    13 ligand_xtal_pose.pdb_12       1 ligand_xtal_pose.pdb C          1      0.116817275862     12.010780000000
-    14 ligand_xtal_pose.pdb_13       1 ligand_xtal_pose.pdb N          1     -0.681382724138     14.006720000000
-    15 ligand_xtal_pose.pdb_14       1 ligand_xtal_pose.pdb C          1      0.116817275862     12.010780000000
-    16 ligand_xtal_pose.pdb_15       1 ligand_xtal_pose.pdb C          1     -0.106882724138     12.010780000000
-    17 ligand_xtal_pose.pdb_16       1 ligand_xtal_pose.pdb C          1      0.159117275862     12.010780000000
-    18 ligand_xtal_pose.pdb_17       1 ligand_xtal_pose.pdb C          1     -0.171282724138     12.010780000000
-    19 ligand_xtal_pose.pdb_18       1 ligand_xtal_pose.pdb C          1     -0.107482724138     12.010780000000
-    20 ligand_xtal_pose.pdb_19       1 ligand_xtal_pose.pdb C          1     -0.118482724138     12.010780000000
-    21 ligand_xtal_pose.pdb_20       1 ligand_xtal_pose.pdb C          1     -0.085982724138     12.010780000000
-    22 ligand_xtal_pose.pdb_21       1 ligand_xtal_pose.pdb C          1     -0.118482724138     12.010780000000
-    23 ligand_xtal_pose.pdb_22       1 ligand_xtal_pose.pdb C          1     -0.107482724138     12.010780000000
-    24 ligand_xtal_pose.pdb_23       1 ligand_xtal_pose.pdb O          1     -0.586082724138     15.999430000000
-    25 ligand_xtal_pose.pdb_24       1 ligand_xtal_pose.pdb O          1     -0.295882724138     15.999430000000
-    26 ligand_xtal_pose.pdb_25       1 ligand_xtal_pose.pdb C          1      0.106717275862     12.010780000000
-    27 ligand_xtal_pose.pdb_26       1 ligand_xtal_pose.pdb O          1     -0.288882724138     15.999430000000
-    28 ligand_xtal_pose.pdb_27       1 ligand_xtal_pose.pdb C          1      0.104717275862     12.010780000000
-    29 ligand_xtal_pose.pdb_28       1 ligand_xtal_pose.pdb H          1      0.155017275862      1.007947000000
-    30 ligand_xtal_pose.pdb_29       1 ligand_xtal_pose.pdb H          1      0.159017275862      1.007947000000
-    31 ligand_xtal_pose.pdb_30       1 ligand_xtal_pose.pdb H          1      0.084717275862      1.007947000000
-    32 ligand_xtal_pose.pdb_31       1 ligand_xtal_pose.pdb H          1      0.069717275862      1.007947000000
-    33 ligand_xtal_pose.pdb_32       1 ligand_xtal_pose.pdb H          1      0.069717275862      1.007947000000
-    34 ligand_xtal_pose.pdb_33       1 ligand_xtal_pose.pdb H          1      0.052217275862      1.007947000000
-    35 ligand_xtal_pose.pdb_34       1 ligand_xtal_pose.pdb H          1      0.052217275862      1.007947000000
-    36 ligand_xtal_pose.pdb_35       1 ligand_xtal_pose.pdb H          1      0.081717275862      1.007947000000
-    37 ligand_xtal_pose.pdb_36       1 ligand_xtal_pose.pdb H          1      0.087217275862      1.007947000000
-    38 ligand_xtal_pose.pdb_37       1 ligand_xtal_pose.pdb H          1      0.087217275862      1.007947000000
-    39 ligand_xtal_pose.pdb_38       1 ligand_xtal_pose.pdb H          1      0.097717275862      1.007947000000
-    40 ligand_xtal_pose.pdb_39       1 ligand_xtal_pose.pdb H          1      0.097717275862      1.007947000000
-    41 ligand_xtal_pose.pdb_40       1 ligand_xtal_pose.pdb H          1      0.439817275862      1.007947000000
-    42 ligand_xtal_pose.pdb_41       1 ligand_xtal_pose.pdb H          1      0.097717275862      1.007947000000
-    43 ligand_xtal_pose.pdb_42       1 ligand_xtal_pose.pdb H          1      0.097717275862      1.007947000000
-    44 ligand_xtal_pose.pdb_43       1 ligand_xtal_pose.pdb H          1      0.087217275862      1.007947000000
-    45 ligand_xtal_pose.pdb_44       1 ligand_xtal_pose.pdb H          1      0.087217275862      1.007947000000
-    46 ligand_xtal_pose.pdb_45       1 ligand_xtal_pose.pdb H          1      0.120717275862      1.007947000000
-    47 ligand_xtal_pose.pdb_46       1 ligand_xtal_pose.pdb H          1      0.120717275862      1.007947000000
-    48 ligand_xtal_pose.pdb_47       1 ligand_xtal_pose.pdb H          1      0.136517275862      1.007947000000
-    49 ligand_xtal_pose.pdb_48       1 ligand_xtal_pose.pdb H          1      0.156017275862      1.007947000000
-    50 ligand_xtal_pose.pdb_49       1 ligand_xtal_pose.pdb H          1      0.158017275862      1.007947000000
-    51 ligand_xtal_pose.pdb_50       1 ligand_xtal_pose.pdb H          1      0.156017275862      1.007947000000
-    52 ligand_xtal_pose.pdb_51       1 ligand_xtal_pose.pdb H          1      0.136517275862      1.007947000000
-    53 ligand_xtal_pose.pdb_52       1 ligand_xtal_pose.pdb H          1      0.050050275862      1.007947000000
-    54 ligand_xtal_pose.pdb_53       1 ligand_xtal_pose.pdb H          1      0.050050275862      1.007947000000
-    55 ligand_xtal_pose.pdb_54       1 ligand_xtal_pose.pdb H          1      0.050050275862      1.007947000000
-    56 ligand_xtal_pose.pdb_55       1 ligand_xtal_pose.pdb H          1      0.054050275862      1.007947000000
-    57 ligand_xtal_pose.pdb_56       1 ligand_xtal_pose.pdb H          1      0.054050275862      1.007947000000
-    58 ligand_xtal_pose.pdb_57       1 ligand_xtal_pose.pdb H          1      0.054050275862      1.007947000000
+     1 ligand_xtal_pose.pdb_0       1 LIG           C1         1      0.087117275862     12.010780000000
+     2 ligand_xtal_pose.pdb_1       1 LIG           C2         1      0.159117275862     12.010780000000
+     3 ligand_xtal_pose.pdb_2       1 LIG           C3         1     -0.187982724138     12.010780000000
+     4 ligand_xtal_pose.pdb_3       1 LIG           C4         1     -0.039282724138     12.010780000000
+     5 ligand_xtal_pose.pdb_4       1 LIG           C5         1     -0.208582724138     12.010780000000
+     6 ligand_xtal_pose.pdb_5       1 LIG           C6         1     -0.100982724138     12.010780000000
+     7 ligand_xtal_pose.pdb_6       1 LIG           C7         1      0.606717275862     12.010780000000
+     8 ligand_xtal_pose.pdb_7       1 LIG           C8         1     -0.176682724138     12.010780000000
+     9 ligand_xtal_pose.pdb_8       1 LIG           C9         1     -0.032082724138     12.010780000000
+    10 ligand_xtal_pose.pdb_9       1 LIG           C10        1     -0.064382724138     12.010780000000
+    11 ligand_xtal_pose.pdb_10       1 LIG           C11        1     -0.072682724138     12.010780000000
+    12 ligand_xtal_pose.pdb_11       1 LIG           C12        1     -0.106882724138     12.010780000000
+    13 ligand_xtal_pose.pdb_12       1 LIG           C13        1      0.116817275862     12.010780000000
+    14 ligand_xtal_pose.pdb_13       1 LIG           N14        1     -0.681382724138     14.006720000000
+    15 ligand_xtal_pose.pdb_14       1 LIG           C15        1      0.116817275862     12.010780000000
+    16 ligand_xtal_pose.pdb_15       1 LIG           C16        1     -0.106882724138     12.010780000000
+    17 ligand_xtal_pose.pdb_16       1 LIG           C17        1      0.159117275862     12.010780000000
+    18 ligand_xtal_pose.pdb_17       1 LIG           C18        1     -0.171282724138     12.010780000000
+    19 ligand_xtal_pose.pdb_18       1 LIG           C19        1     -0.107482724138     12.010780000000
+    20 ligand_xtal_pose.pdb_19       1 LIG           C20        1     -0.118482724138     12.010780000000
+    21 ligand_xtal_pose.pdb_20       1 LIG           C21        1     -0.085982724138     12.010780000000
+    22 ligand_xtal_pose.pdb_21       1 LIG           C22        1     -0.118482724138     12.010780000000
+    23 ligand_xtal_pose.pdb_22       1 LIG           C23        1     -0.107482724138     12.010780000000
+    24 ligand_xtal_pose.pdb_23       1 LIG           O24        1     -0.586082724138     15.999430000000
+    25 ligand_xtal_pose.pdb_24       1 LIG           O25        1     -0.295882724138     15.999430000000
+    26 ligand_xtal_pose.pdb_25       1 LIG           C26        1      0.106717275862     12.010780000000
+    27 ligand_xtal_pose.pdb_26       1 LIG           O27        1     -0.288882724138     15.999430000000
+    28 ligand_xtal_pose.pdb_27       1 LIG           C28        1      0.104717275862     12.010780000000
+    29 ligand_xtal_pose.pdb_28       1 LIG           H29        1      0.155017275862      1.007947000000
+    30 ligand_xtal_pose.pdb_29       1 LIG           H30        1      0.159017275862      1.007947000000
+    31 ligand_xtal_pose.pdb_30       1 LIG           H31        1      0.084717275862      1.007947000000
+    32 ligand_xtal_pose.pdb_31       1 LIG           H32        1      0.069717275862      1.007947000000
+    33 ligand_xtal_pose.pdb_32       1 LIG           H33        1      0.069717275862      1.007947000000
+    34 ligand_xtal_pose.pdb_33       1 LIG           H34        1      0.052217275862      1.007947000000
+    35 ligand_xtal_pose.pdb_34       1 LIG           H35        1      0.052217275862      1.007947000000
+    36 ligand_xtal_pose.pdb_35       1 LIG           H36        1      0.081717275862      1.007947000000
+    37 ligand_xtal_pose.pdb_36       1 LIG           H37        1      0.087217275862      1.007947000000
+    38 ligand_xtal_pose.pdb_37       1 LIG           H38        1      0.087217275862      1.007947000000
+    39 ligand_xtal_pose.pdb_38       1 LIG           H39        1      0.097717275862      1.007947000000
+    40 ligand_xtal_pose.pdb_39       1 LIG           H40        1      0.097717275862      1.007947000000
+    41 ligand_xtal_pose.pdb_40       1 LIG           H41        1      0.439817275862      1.007947000000
+    42 ligand_xtal_pose.pdb_41       1 LIG           H42        1      0.097717275862      1.007947000000
+    43 ligand_xtal_pose.pdb_42       1 LIG           H43        1      0.097717275862      1.007947000000
+    44 ligand_xtal_pose.pdb_43       1 LIG           H44        1      0.087217275862      1.007947000000
+    45 ligand_xtal_pose.pdb_44       1 LIG           H45        1      0.087217275862      1.007947000000
+    46 ligand_xtal_pose.pdb_45       1 LIG           H46        1      0.120717275862      1.007947000000
+    47 ligand_xtal_pose.pdb_46       1 LIG           H47        1      0.120717275862      1.007947000000
+    48 ligand_xtal_pose.pdb_47       1 LIG           H48        1      0.136517275862      1.007947000000
+    49 ligand_xtal_pose.pdb_48       1 LIG           H49        1      0.156017275862      1.007947000000
+    50 ligand_xtal_pose.pdb_49       1 LIG           H50        1      0.158017275862      1.007947000000
+    51 ligand_xtal_pose.pdb_50       1 LIG           H51        1      0.156017275862      1.007947000000
+    52 ligand_xtal_pose.pdb_51       1 LIG           H52        1      0.136517275862      1.007947000000
+    53 ligand_xtal_pose.pdb_52       1 LIG           H53        1      0.050050275862      1.007947000000
+    54 ligand_xtal_pose.pdb_53       1 LIG           H54        1      0.050050275862      1.007947000000
+    55 ligand_xtal_pose.pdb_54       1 LIG           H55        1      0.050050275862      1.007947000000
+    56 ligand_xtal_pose.pdb_55       1 LIG           H56        1      0.054050275862      1.007947000000
+    57 ligand_xtal_pose.pdb_56       1 LIG           H57        1      0.054050275862      1.007947000000
+    58 ligand_xtal_pose.pdb_57       1 LIG           H58        1      0.054050275862      1.007947000000
+    59 DUM                           1 LIG           DM1        1      0.000000000000      0.000000
+    60 DUM                           1 LIG           DM2        1      0.000000000000      0.000000
+    61 DUM                           1 LIG           DM3        1      0.000000000000      0.000000
+
 
 [ pairs ]
 ;ai    aj   funct
@@ -641,4 +645,9 @@
 [ exclusions ]
 ;ai    aj
 
+[ position_restraints ]
+; ai funct fcxA fcyA fczA fcxB fcyB fczB
+3   1 1000 1000 1000 0 0 0
+8   1 1000 1000 1000 0 0 0
+17  1 1000 1000 1000 0 0 0
 
