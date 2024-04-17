@@ -3,15 +3,13 @@
 # put receptor pbc box with some margins
 gmx editconf -f complex.gro -bt cubic -d 1.0 -o complex_box.gro
 
+# Next, put position restraints on the ligand!
+# # [ do this here ]
+
 # Let's just see if the topology works...
 # Try to grompp the complex
 gmx grompp -f em.mdp -c complex_box.gro -r complex_box.gro -p complex.top -o em.tpr -v -maxwarn 2
-# gmx mdrun  -v -s em.tpr -c em.gro
-#
-# # Make sure the confout.gto file has clustered periodic images
-# gmx trjcon v -s em.tpr -f confout.gro -pbc cluster -o confout_cluster.gro
-
-
+gmx mdrun  -v -s em.tpr -c em.gro -e em.edr -g em.log -o em.trr
 
 
 ######################
