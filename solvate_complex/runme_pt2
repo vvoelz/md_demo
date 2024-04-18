@@ -1,0 +1,23 @@
+
+######################
+
+# Add solvent
+gmx solvate -cp em.gro -p complex.top -o complex_solvated.gro
+
+# Grompp to get a tpr
+gmx grompp -f em.mdp -c complex_solvated.gro -r complex_solvated.gro -p complex.top -o temp.tpr -v -maxwarn 2
+# use the tpr to add counterions
+gmx genion -s temp.tpr -p complex.top -o complex_solvated_ions.gro -conc 0.100 -neutral  # choose group SOL
+
+# Minimize the solvated system
+gmx grompp -f em.mdp -c complex_solvated_ions.gro -r complex_solvated_ions.gro -p complex.top -o em_solv_ions.tpr -v -maxwarn 2
+gmx mdrun -v -s em_solv_ions.tpr -c em_solv_ions.gro -g em_solv_ions.log -o em_solv_ions.trr
+
+# Temperature equilibrate the system
+gmx grompp -f nvt.mdp -c em_solv_ions.gro -r complex_solvated_ions.gro -p complex.top -o nvt.tpr -v -maxwarn 2
+gmx mdrun -v -s nvt.tpr -c nvt.gro -g nvt.log -e nvt.edr -o nvt.trr -x nvt.xtc
+
+# Pressure equilibrate the system
+gmx grompp -f npt.mdp -c nvt.gro -r complex_solvated_ions.gro -p complex.top -o npt.tpr -v -maxwarn 2
+gmx mdrun -v -s npt.tpr -c npt.gro -g npt.log -e npt.edr -o npt.trr -x npt.xtc
+
