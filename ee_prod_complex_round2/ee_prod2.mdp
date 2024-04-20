@@ -1,0 +1,119 @@
+;       generated from expanded_ensemble_mdpfile() on Sat Apr 20 09:58:40 2024 
+;
+;
+; Run control
+integrator               = md-vv
+tinit                    = 0
+dt                       = 0.0020
+nsteps                   = 5000000
+comm-mode                = Linear
+nstcomm                  = 1
+
+; Output control
+nstlog                   = 2500
+nstcalcenergy            = 1
+nstenergy                = 250000
+nstxout-compressed       = 250000        ; save xtc coordinates
+nstxout                  = 2500000       ; save all coordinates
+nstvout                  = 2500000       ; save all velocities
+compressed-x-precision   = 1000
+
+; This selects the subset of atoms for the .xtc file. You can
+; select multiple groups. By default all atoms will be written.
+compressed-x-grps        = LIG
+
+; Selection of energy groups
+energygrps               = System
+; Neighborsearching and short-range nonbonded interactions
+nstlist                  = 10
+ns_type                  = grid
+pbc                      = xyz
+rlist                    = 0.9
+
+; Electrostatics
+cutoff-scheme            = verlet
+coulombtype              = PME
+rcoulomb                 = 0.9
+
+; van der Waals
+vdw-type                 = Cut-off
+vdw-modifier             = Potential-switch
+rvdw-switch              = 0.89      ;    0.9
+rvdw                     = 0.9
+
+; Apply long range dispersion corrections for Energy and Pressure 
+; YES -- we're doing NPT
+DispCorr                 = EnerPres
+
+fourierspacing           = 0.10
+pme_order                = 4
+ewald_rtol               = 1e-6
+ewald_geometry           = 3d
+epsilon_surface          = 0
+
+
+; Temperature coupling
+tcoupl                   = v-rescale
+nsttcouple               = 1
+tc_grps                  = System
+tau_t                    = 0.5
+ref_t                    = 298.15
+
+; Pressure coupling is on for NPT - we're doing NVT.  Berendsen is recommended for use with position restraints
+pcoupl                   = Berendsen
+pcoupltype               = isotropic                   ; uniform scaling of x-y-z box vectors
+tau_p                    = 2.0                         ; time constant, in ps
+ref_p                    = 1.0                         ; reference pressure (in bar)
+compressibility          = 4.5e-5                      ; isothermal compressibility, bar^-1
+refcoord_scaling         = com
+
+
+; velocity generation
+gen_vel                  = yes
+gen-temp                 = 298.15
+gen-seed                 = 11388 ; need to randomize the seed each time.
+
+; options for bonds
+constraints              = h-bonds  ; we only have C-H bonds here
+; Type of constraint algorithm
+constraint-algorithm     = lincs
+; Highest order in the expansion of the constraint coupling matrix
+lincs-order              = 12
+lincs-iter               = 2
+
+
+; FREE ENERGY CONTROL OPTIONS =
+free-energy   	        = expanded
+calc-lambda-neighbors 	= -1
+sc-alpha 		= 0.5    ;     0.5 
+sc-power 		= 1      ;     keep this at 1 
+sc-sigma 	        = 0.3    ;     0.5
+couple-moltype 		= LIG  ; ligand mol type
+couple-lambda0 		= vdw-q
+couple-lambda1 		= none
+couple-intramol 	= yes
+init-lambda-state	= 0
+
+nstexpanded             = 250  
+nstdhdl                 = 250  ; dhdl snapshot freq  <-- MUST be same as nstexpanded
+dhdl-print-energy 	= total
+nst-transition-matrix 	= 250000
+
+lmc-seed                = 11388 ; should be randomized
+lmc-gibbsdelta          = 1 ; transition only between nearest neighbors, -1 for all possible i->j
+symmetrized-transition-matrix = yes
+
+lmc-stats                       = wang-landau
+lmc-move                        = metropolized-gibbs
+lmc-weights-equil               = wl-delta
+weight-equil-wl-delta           = 0.00001
+init-wl-delta                   = 10.0   ; in units kT -  MRS had 10.0 at first
+separate-dhdl-file              = yes
+wl-scale                        = 0.8
+wl-ratio                        = 0.7
+
+coul-lambdas         = 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00907 0.03078 0.05143 0.07343 0.09669 0.12169 0.14366 0.16855 0.18920 0.21005 0.23312 0.25528 0.27991 0.30727 0.33045 0.35160 0.37369 0.39348 0.41324 0.43367 0.45157 0.46938 0.49095 0.51575 0.53550 0.55482 0.57689 0.59783 0.61765 0.63856 0.66054 0.68181 0.70411 0.72714 0.74970 0.77107 0.79139 0.81273 0.83411 0.85627 0.88022 0.90124 0.91960 0.93883 0.95819 0.97816 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000
+vdw-lambdas          = 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00614 0.03264 0.05955 0.08876 0.11422 0.14206 0.16809 0.18942 0.21165 0.24101 0.27440 0.29997 0.32313 0.34506 0.36227 0.37865 0.39839 0.42523 0.44715 0.46276 0.47858 0.49453 0.50998 0.52631 0.54561 0.56346 0.58077 0.59903 0.62150 0.63927 0.65712 0.67420 0.68622 0.69832 0.71002 0.72123 0.73311 0.74372 0.75399 0.76736 0.78072 0.79304 0.80607 0.81966
+fep-lambdas          = 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000
+restraint-lambdas    = 0.00000 0.08833 0.20660 0.32086 0.42614 0.53586 0.64730 0.84541 0.97297 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000 1.00000
+init-lambda-weights  = 0.00000    2.13351    6.47158    7.31249    7.26774   10.03969   13.60436   16.77858   24.54257   34.14280   44.20744   54.88789   63.55211   73.88612   80.05276   85.94855   92.60957   98.93276  105.57248  111.15420  119.75619  130.04132  136.63025  144.02075  152.09119  158.49118  161.85574  166.73459  174.75424  180.36411  185.94583  192.08296  197.95703  203.33302  202.95702  206.49237  210.00624  211.89369  215.45938  216.49066  220.96388  227.86647  231.02037  232.91434  232.71118  231.61931  230.89090  232.94966  233.68982  237.88956  242.62128  244.68025  246.12370  246.77740  246.25710  245.78972  245.93074  248.28911  249.34538  250.27525  250.11409  250.43410  251.84079  255.33833  256.18695  255.92778  257.76968  258.02570  256.39709  256.78137  258.47849  258.51462  259.26712  259.20520  258.92136  257.29050  257.20499  256.11255  257.41901  258.26059  257.37604  256.45081  255.73567  257.47021  259.58081  259.45581  257.69833  259.92773  259.80948  261.11270  262.99527  262.32141  264.41199  263.69147  262.06180  260.94916  260.54825  261.56946  261.98416 

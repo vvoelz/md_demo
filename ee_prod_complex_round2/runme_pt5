@@ -1,0 +1,27 @@
+# After inspection of the 1-ns ee_prod_complex :
+#
+# 1. the protein is moving too much
+# 2. we can use the additionl production to get even better lambda values,
+# 3. ...and wwe can set initial weights so the simulation doesn't
+#    need to spend time learning the weights
+#
+# I made `complex2.top' with 10x stronger position restraints  (was 0.115 for 2A rmsd fluct)
+#[ position_restraints ]
+#;  i funct       fcx        fcy        fcz
+#   5    1       1.150       1.150       1.150
+#  12    1       1.150       1.150       1.150
+#  ...
+
+# For ee_prod2.mdp, the lambda schedule was updated with a further round of pylamdaopt,
+# and the initial bias weights were taken from the final bias weights of the last round
+#
+# Startiing conf and position restraint are same as the first round
+# cp ../ee_prod_complex/npt.gro ./
+# cp ../ee_prod_complex/complex_solvated_ions.gro ./
+# cp ../ee_prod_complex/LIG_pos1.itp ./
+#
+# Total ee_prod2 run time is 10 ns, with 10 ps Protein+LIG *.xtc snapshots
+gmx grompp -f ee_prod2.mdp -c npt.gro -r complex_solvated_ions.gro -p complex2.top -o ee_prod2.tpr -v -maxwarn 2
+gmx mdrun -v -s ee_prod2.tpr -c ee_prod2.gro -g ee_prod2.log -o ee_prod2.trr -x ee_prod2.xtc -dhdl ee_prod2.dhdl
+
+
