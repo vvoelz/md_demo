@@ -1,0 +1,30 @@
+################
+# cp ../prepare_complex/em.gro ./
+# removed protein and renamed to LIG_pos1_needs_renum.gro
+# then renumberd and put in box with 1.2 nm margins
+gmx editconf -f LIG_pos1_needs_renum.gro -resnr 1 -d 1.2 -o LIG_pos1.gro
+
+#######################################
+# cp ../prepare_complex/complex.top ./
+# From complex.top created ligand.top that has the protein topology removed
+
+# Add solvent
+gmx solvate -cp LIG_pos1.gro -p ligand.top -o ligand_solvated.gro
+
+# Grompp to get a tpr
+gmx grompp -f em.mdp -c ligand_solvated.gro -r ligand_solvated.gro -p ligand.top -o temp.tpr -v -maxwarn 2
+# use the tpr to add counterions
+gmx genion -s temp.tpr -p ligand.top -o ligand_solvated_ions.gro -conc 0.100 -neutral  # choose group SOL
+
+# Minimize the solvated system
+gmx grompp -f em.mdp -c ligand_solvated_ions.gro -r ligand_solvated_ions.gro -p ligand.top -o em_solv_ions.tpr -v -maxwarn 2
+gmx mdrun -v -s em_solv_ions.tpr -c em_solv_ions.gro -g em_solv_ions.log -o em_solv_ions.trr
+
+# Temperature equilibrate the system
+gmx grompp -f nvt.mdp -c em_solv_ions.gro -r ligand_solvated_ions.gro -p ligand.top -o nvt.tpr -v -maxwarn 2
+gmx mdrun -v -s nvt.tpr -c nvt.gro -g nvt.log -e nvt.edr -o nvt.trr -x nvt.xtc
+
+# Pressure equilibrate the system
+gmx grompp -f npt.mdp -c nvt.gro -r ligand_solvated_ions.gro -p ligand.top -o npt.tpr -v -maxwarn 2
+gmx mdrun -v -s npt.tpr -c npt.gro -g npt.log -e npt.edr -o npt.trr -x npt.xtc
+
