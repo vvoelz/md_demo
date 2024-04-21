@@ -1,16 +1,41 @@
-# SETUP
+# INSTRUCTIONS
 
-Make sure to put gromacs202.3 in your path
+Move the `ee_prod2_ligand.zip` archive to Owlsnest, inside your working directory:
 
 ```
-$ module load gromacs/2020.3
+scp ee_prod2_ligand.zip [AccessNetID]@owlsnest.hpc.temple.edu:work/ee_prod2_ligand.zip
 ```
 
-#
-# cp ../ee_optimization_ligand/npt.gro ./
-# cp ../ee_optimization_ligand/em_solv_ions.gro ./
-# cp ../ee_optimization_ligand/LIG_pos1.itp ./
-# cp ../ee_optimization_ligand/ligand.top ./
+Log into Owlsnest:
+```
+ssh [AccessNetID]@owlsnest.hpc.temple.edu
+```
+
+Once you are logged on to Owlsnest, go to your working directory, unzip the archive, and go inside the resulting directory:
+```
+cd ~/work
+unzip ee_prod2_ligand.zip
+cd ee_prod2_ligand
+```
+
+The following files should be in the directory:
+```
+$ ls -1
+ee_prod2.mdp
+ee_prod2.qsub.sh
+em_solv_ions.gro
+junk.py
+ligand.top
+LIG_pos1.itp
+npt.gro
+README.md
+```
+
+Make sure to put gromacs2020.3 in your path
+```
+module load gromacs/2020.3
+```
+
 
 # I set the simulation time to 100 ns 
 # optimized the bias weights using pylambdaopt
