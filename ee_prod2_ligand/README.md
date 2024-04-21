@@ -24,8 +24,8 @@ $ ls -1
 ee_prod2.mdp
 ee_prod2.qsub.sh
 em_solv_ions.gro
-junk.py
 ligand.top
+ligand_only.gro 
 LIG_pos1.itp
 npt.gro
 README.md
