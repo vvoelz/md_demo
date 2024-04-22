@@ -1,0 +1,12 @@
+################
+# copy the complete gro and top from ../prepare_complex
+### cp ../solvate_complex/npt.gro ./
+### cp ../solvate_complex/complex.top ./
+### cp ../solvate_complex/LIG_pos1.itp ./
+### cp ../solvate_complex/complex_solvated_ions.gro ./
+
+# Next, simulation with a EE pre-production to learn some good initial bias weights
+gmx grompp -f ee_test.mdp -c npt.gro -r em_solv_ions.gro -p ligand.top -o ee_test.tpr -v -maxwarn 2
+gmx mdrun -v -s ee_test.tpr -c ee_test.gro -g ee_test.log -o ee_test.trr -x ee_test.xtc -dhdl ee_test.dhdl
+
+
