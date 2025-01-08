@@ -1,0 +1,51 @@
+----------------------------------------
+Begin Batch Job Prologue Tue Jan  7 23:45:05 EST 2025
+Job ID:           2094841
+Username:         tun50867
+Group:            chem
+Job Name:         ee_prod22_complex
+Resources List:   walltime=36:00:00,nodes=3:ppn=28,neednodes=3:ppn=28
+Queue:            normal
+Account:          
+Nodes:            b160 b161 b162 
+----------------------------------------
+End Batch Job Prologue Tue Jan  7 23:45:06 EST 2025
+----------------------------------------
+processing topology...
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+Analysing residue names:
+There are:   542    Protein residues
+There are:     1      Other residues
+There are: 38584      Water residues
+There are:   158        Ion residues
+Analysing Protein...
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 298.15 K
+Calculated rlist for 1x1 atom pair-list as 0.951 nm, buffer size 0.051 nm
+Set rlist, assuming 4x4 atom pair-list, to 0.928 nm, buffer size 0.028 nm
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 108x108x108, spacing 0.100 0.100 0.100
+This run will generate roughly 83 Mb of data
+----------------------------------------
+Begin Batch Job Epilogue Wed Jan  8 02:53:20 EST 2025
+Job ID:           2094841
+Username:         tun50867
+Group:            chem
+Job Name:         ee_prod22_complex
+Session:          18689
+Limits:           walltime=36:00:00,nodes=3:ppn=28,neednodes=3:ppn=28
+Resources:        cput=87:46:53,vmem=2005904kb,walltime=03:08:15,mem=469308kb,energy_used=0
+Queue:            normal
+Account:          
+Deleting /dev/shm/*...
+Deleting /dev/shm/*...
+Deleting /dev/shm/*...
+----------------------------------------
+End Batch Job Epilogue Wed Jan  8 02:53:41 EST 2025
+----------------------------------------

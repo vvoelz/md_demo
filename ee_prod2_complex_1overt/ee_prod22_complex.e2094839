@@ -1,0 +1,91 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8 => gcc/12.2.0
+
+           :-) GROMACS - gmx grompp, 2026.0-dev-20241210-e43bbe9 (-:
+
+Executable:   /home/tun50867/gromacs_install/bin/gmx
+Data prefix:  /home/tun50867/gromacs_install
+Working dir:  /gpfs/work/tun50867/git/md_demo/ee_prod2_complex_1overt
+Command line:
+  gmx grompp -f ee_prod2.mdp -c npt.gro -r complex_solvated_ions.gro -p complex.top -o ee_0.tpr -v -maxwarn 2
+
+Ignoring obsolete mdp entry 'ns_type'
+
+NOTE 1 [file ee_prod2.mdp, line 123]:
+  For proper sampling of the (nearly) decoupled state, stochastic dynamics
+  should be used
+
+
+WARNING 1 [file ee_prod2.mdp]:
+  The Berendsen barostat does not generate any strictly correct ensemble,
+  and should not be used for new production simulations (in our opinion).
+  We recommend using the C-rescale barostat instead.
+
+Generating 1-4 interactions: fudge = 0.5
+renumbering atomtypes...
+Atom 59 'Cl' in moleculetype 'LIG' is not bound by a potential or constraint to any other atom in the same moleculetype.
+
+NOTE 2 [file complex.top, line 79269]:
+  In moleculetype 'LIG' 1 atoms are not bound by a potential or constraint
+  to any other atom in the same moleculetype. Although technically this
+  might not cause issues in a simulation, this often means that the user
+  forgot to add a bond/potential/constraint or put multiple molecules in
+  the same moleculetype definition by mistake. Run with -v to get
+  information for each atom.
+
+processing index file...
+Making dummy/rest group for Acc. not used containing 124262 elements
+Making dummy/rest group for Freeze containing 124262 elements
+Making dummy/rest group for VCM containing 124262 elements
+Number of degrees of freedom in T-Coupling group System is 252912.00
+Making dummy/rest group for User1 containing 124262 elements
+Making dummy/rest group for User2 containing 124262 elements
+Making dummy/rest group for Compressed X containing 115910 elements
+Making dummy/rest group for Or. Res. Fit containing 124262 elements
+Making dummy/rest group for QMMM containing 124262 elements
+T-Coupling       has 1 element(s): System
+Energy Mon.      has 1 element(s): System
+Acc. not used    has 1 element(s): rest
+Freeze           has 1 element(s): rest
+User1            has 1 element(s): rest
+User2            has 1 element(s): rest
+VCM              has 1 element(s): rest
+Compressed X     has 2 element(s): Protein rest
+Or. Res. Fit     has 1 element(s): rest
+QMMM             has 1 element(s): rest
+
+NOTE 3 [file ee_prod2.mdp]:
+  Removing center of mass motion in the presence of position restraints
+  might cause artifacts. When you are using position restraints to
+  equilibrate a macro-molecule, the artifacts are usually negligible.
+
+
+There were 3 NOTEs
+
+There was 1 WARNING
+
+GROMACS reminds you: "You Leave Me Dry" (P.J. Harvey)
+
+            :-) GROMACS - gmx mdrun, 2026.0-dev-20241210-e43bbe9 (-:
+
+Executable:   /home/tun50867/gromacs_install/bin/gmx
+Data prefix:  /home/tun50867/gromacs_install
+Working dir:  /gpfs/work/tun50867/git/md_demo/ee_prod2_complex_1overt
+Command line:
+  gmx mdrun -v -s ee_0.tpr -c ee_0.gro -g ee_0.log -o ee_0.trr -x ee_0.xtc -dhdl ee_0.dhdl
+
+Reading file ee_0.tpr, VERSION 2026.0-dev-20241210-e43bbe9 (single precision)
+Changing nstlist from 10 to 20, rlist from 0.949 to 1.044
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Using 28 MPI threads
+Using 1 OpenMP thread per tMPI thread
+
+starting mdrun 'complex in water'
+1000000 steps,   2000.0 ps.
+step 0vol 0.62! imb F 149% pme/F 0.19 step 100, will finish Wed Jan  8 14:04:23 2025vol 0.66! imb F 151% pme/F 0.17 step 200, will finish Wed Jan  8 12:29:16 2025vol 0.62! imb F 164% pme/F 0.16 step 300, will finish Wed Jan  8 11:58:04 2025vol 0.66! imb F 157% pme/F 0.16 step 400, will finish Wed Jan  8 11:44:46 2025
+
+Received the TERM signal, stopping within 20 steps
+

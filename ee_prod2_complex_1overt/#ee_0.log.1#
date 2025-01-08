@@ -1,0 +1,1150 @@
+            :-) GROMACS - gmx mdrun, 2026.0-dev-20241210-e43bbe9 (-:
+
+Copyright 1991-2026 The GROMACS Authors.
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+                         Current GROMACS contributors:
+       Mark Abraham           Andrey Alekseenko           Brian Andrews       
+      Vladimir Basov              Paul Bauer                Hugh Bird         
+      Eliane Briand               Ania Brown              Mahesh Doijade      
+      Giacomo Fiorin          Stefan Fleischmann          Sergey Gorelov      
+   Gilles Gouaillardet            Alan Gray              M. Eric Irrgang      
+   Farzaneh Jalalypour         Petter Johansson          Carsten Kutzner      
+    Grzegorz Łazarski         Justin A. Lemkul          Magnus Lundborg      
+       Pascal Merz             Vedran Miletić            Dmitry Morozov      
+     Lukas Müllender            Julien Nabet             Szilárd Páll      
+ Andrea Pasquadibisceglie     Michele Pellegrino         Nicola Piasentin     
+     Daniele Rapetti         Muhammad Umair Sadiq         Hubert Santuz       
+      Roland Schulz             Michael Shirts           Tatiana Shugaeva     
+     Alexey Shvetsov            Philip Turner            Alessandra Villa     
+ Sebastian Wingbermühle  
+
+                         Previous GROMACS contributors:
+        Emile Apol             Rossen Apostolov           James Barnett       
+  Herman J.C. Berendsen         Cathrine Bergh             Par Bjelkmar       
+      Christian Blau          Viacheslav Bolnykh            Kevin Boyd        
+    Aldert van Buuren          Carlo Camilloni           Rudi van Drunen      
+      Anton Feenstra           Oliver Fleetwood            Vytas Gapsys       
+       Gaurav Garg             Gerrit Groenhof            Bert de Groot       
+      Anca Hamuraru           Vincent Hindriksen          Victor Holanda      
+     Aleksei Iupinov              Joe Jordan            Christoph Junghans    
+    Prashanth Kanduri        Dimitrios Karkoulis           Peter Kasson       
+      Sebastian Kehl           Sebastian Keller             Jiri Kraus        
+       Per Larsson              Viveca Lindahl            Erik Marklund       
+    Pieter Meulenhoff           Teemu Murtola              Sander Pronk       
+      Alfons Sijbers            Balint Soproni         David van der Spoel    
+      Peter Tieleman            Carsten Uphoff             Jon Vincent        
+     Teemu Virolainen         Christian Wennberg           Maarten Wolf       
+      Artem Zhmurov       
+
+                  Coordinated by the GROMACS project leaders:
+                           Berk Hess and Erik Lindahl
+
+GROMACS:      gmx mdrun, version 2026.0-dev-20241210-e43bbe9
+Executable:   /home/tun50867/gromacs_install/bin/gmx
+Data prefix:  /home/tun50867/gromacs_install
+Working dir:  /gpfs/work/tun50867/git/md_demo/ee_prod2_complex_1overt
+Process ID:   30453
+Command line:
+  gmx mdrun -v -s ee_0.tpr -c ee_0.gro -g ee_0.log -o ee_0.trr -x ee_0.xtc -dhdl ee_0.dhdl
+
+GROMACS version:     2026.0-dev-20241210-e43bbe9
+GIT SHA1 hash:       e43bbe993d618c49616face56cc8fd3fe46fff16
+Precision:           mixed
+Memory model:        64 bit
+MPI library:         thread_mpi
+OpenMP support:      enabled (GMX_OPENMP_MAX_THREADS = 128)
+GPU support:         disabled
+SIMD instructions:   AVX2_256
+CPU FFT library:     fftw-3.3.10-sse2-avx-avx2-avx2_128
+GPU FFT library:     none
+Multi-GPU FFT:       none
+RDTSCP usage:        enabled
+TNG support:         enabled
+Hwloc support:       disabled
+Tracing support:     disabled
+C compiler:          /usr/lib64/ccache/cc GNU 4.8.5
+C compiler flags:    -Wno-array-bounds -fexcess-precision=fast -funroll-all-loops -mavx2 -mfma -Wall -Wno-unused -Wunused-value -Wunused-parameter -Wextra -Wno-sign-compare -Wpointer-arith -Wpedantic -Wundef -Wno-missing-field-initializers -pthread -O3 -DNDEBUG
+C++ compiler:        /usr/lib64/ccache/c++ GNU 12.2.0
+C++ compiler flags:  -Wno-array-bounds -fexcess-precision=fast -funroll-all-loops -mavx2 -mfma -Wall -Wextra -Wpointer-arith -Wmissing-declarations -Wpedantic -Wundef -Wstringop-truncation -Wno-missing-field-initializers -pthread -Wno-old-style-cast -Wno-cast-qual -Wno-suggest-override -Wno-suggest-destructor-override -Wno-zero-as-null-pointer-constant -Wno-cast-function-type-strict SHELL:-fopenmp -O3 -DNDEBUG
+BLAS library:        External - detected on the system
+LAPACK library:      External - detected on the system
+
+
+Running on 1 node with total 28 cores, 28 processing units
+Hardware detected on host b167:
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Xeon(R) CPU E5-2690 v4 @ 2.60GHz
+    Family: 6   Model: 79   Stepping: 1
+    Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma hle htt intel lahf mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp rtm sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+  Hardware topology: Basic
+    Packages, cores, and logical processors:
+    [indices refer to OS logical processors]
+      Package  0: [   0] [   2] [   4] [   6] [   8] [  10] [  12] [  14] [  16] [  18] [  20] [  22] [  24] [  26]
+      Package  1: [   1] [   3] [   5] [   7] [   9] [  11] [  13] [  15] [  17] [  19] [  21] [  23] [  25] [  27]
+    CPU limit set by OS: -1   Recommended max number of threads: 28
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX (2015)
+DOI: 10.1016/j.softx.2015.06.001
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale (2015)
+DOI: 10.1007/978-3-319-15976-8_1
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics (2013)
+DOI: 10.1093/bioinformatics/btt055
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess, C. Kutzner, D. van der Spoel, E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. (2008)
+DOI: 10.1021/ct700301q
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark, H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. (2005)
+DOI: 10.1002/jcc.20291
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl, B. Hess, D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. (2001)
+DOI: 10.1007/s008940100045
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. (1995)
+DOI: 10.1016/0010-4655(95)00042-E
+-------- -------- --- Thank You --- -------- --------
+
+
+The number of OpenMP threads was set by environment variable OMP_NUM_THREADS to 1
+
+Input Parameters:
+   integrator                     = md-vv
+   tinit                          = 0
+   dt                             = 0.002
+   nsteps                         = 1000000
+   init-step                      = 0
+   simulation-part                = 1
+   mts                            = false
+   mass-repartition-factor        = 1
+   comm-mode                      = Linear
+   nstcomm                        = 1
+   bd-fric                        = 0
+   ld-seed                        = -1212551273
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 50000
+   nstvout                        = 50000
+   nstfout                        = 0
+   nstlog                         = 2500
+   nstcalcenergy                  = 1
+   nstenergy                      = 250000
+   nstxout-compressed             = 5000
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Verlet
+   nstlist                        = 10
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = 0.005
+   verlet-buffer-pressure-tolerance = 0.5
+   rlist                          = 0.949
+   coulombtype                    = PME
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 0.9
+   epsilon-r                      = 1
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Potential-switch
+   rvdw-switch                    = 0.89
+   rvdw                           = 0.9
+   DispCorr                       = EnerPres
+   table-extension                = 1
+   fourierspacing                 = 0.1
+   fourier-nx                     = 108
+   fourier-ny                     = 108
+   fourier-nz                     = 108
+   pme-order                      = 4
+   ewald-rtol                     = 1e-06
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 3d
+   epsilon-surface                = 0
+   ensemble-temperature-setting   = constant
+   ensemble-temperature           = 298.15
+   tcoupl                         = V-rescale
+   nsttcouple                     = 1
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = Berendsen
+   pcoupltype                     = Isotropic
+   nstpcouple                     = 100
+   tau-p                          = 2
+   compressibility (3x3):
+      compressibility[    0]={ 4.50000e-05,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  4.50000e-05,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  4.50000e-05}
+   ref-p (3x3):
+      ref-p[    0]={ 1.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  1.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  1.00000e+00}
+   refcoord-scaling               = COM
+   posres-com (1x3):
+      posres-com[    0]={ 5.01453e-01,  5.02445e-01,  5.01806e-01}
+   posres-comB (1x3):
+      posres-comB[    0]={ 5.01453e-01,  5.02445e-01,  5.01806e-01}
+   QMMM                           = false
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = false
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 12
+   lincs-iter                     = 2
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = false
+   awh                            = false
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = expanded
+   init-lambda                    = -1
+   init-lambda-state              = 0
+   delta-lambda                   = 0
+   nstdhdl                        = 250
+   n-lambdas                      = 106
+   separate-dvdl:
+       fep-lambdas =   FALSE
+      mass-lambdas =   FALSE
+      coul-lambdas =   TRUE
+       vdw-lambdas =   TRUE
+    bonded-lambdas =   FALSE
+ restraint-lambdas =   TRUE
+temperature-lambdas =   FALSE
+all-lambdas:
+       fep-lambdas =            0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0
+      mass-lambdas =            0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0
+      coul-lambdas =            0           0           0           0           0           0           0           0           0     0.02217     0.04326     0.06637     0.09168     0.11574     0.14051     0.16867     0.19708      0.2221     0.24328     0.26468     0.28687     0.31163     0.33462     0.35423     0.37429     0.39385     0.41692     0.44069      0.4634     0.48477     0.50641     0.53091     0.55481     0.57764     0.60031     0.62296     0.64707     0.67091     0.69262     0.71308     0.73374     0.75419     0.77376     0.79567     0.81943     0.84166     0.86465      0.8885     0.91276     0.94047     0.97368           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1
+       vdw-lambdas =            0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0     0.00907     0.03446     0.05951     0.08948     0.11677     0.13921     0.16116     0.18501     0.20834     0.23072      0.2558     0.27867     0.29825     0.31706     0.33634     0.35694     0.38115      0.4096     0.43649     0.46005     0.48607     0.51019     0.52848     0.54555     0.56548     0.58651     0.60359     0.62481     0.64362     0.65871      0.6721     0.68701     0.70468     0.71799     0.72942     0.74339     0.75323     0.76147     0.77119     0.78116     0.79024     0.79967     0.80915     0.81852     0.82851     0.83986     0.85317     0.86798     0.88237     0.89652     0.91238     0.93094     0.95221     0.97574           1
+    bonded-lambdas =            0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0
+ restraint-lambdas =            0      0.0839     0.19692     0.29157     0.38081        0.49     0.63548     0.86272     0.98827           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1           1
+temperature-lambdas =            0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0
+   calc-lambda-neighbors          = -1
+   dhdl-print-energy              = total
+   sc-alpha                       = 0.5
+   sc-power                       = 1
+   sc-r-power                     = 6
+   sc-sigma                       = 0.3
+   sc-sigma-min                   = 0.3
+   sc-coul                        = false
+   dh-hist-size                   = 0
+   dh-hist-spacing                = 0.1
+   separate-dhdl-file             = yes
+   dhdl-derivatives               = yes
+   sc-function                    = beutler
+   sc-gapsys-scale-linpoint-lj    = 0.85
+   sc-gapsys-scale-linpoint-q     = 0.3
+   sc-gapsys-sigma-lj             = 0.3
+   nstexpanded                    = 250
+   lmc-stats                      = wang-landau
+   lmc-move                       = metropolized-gibbs
+   lmc-weights-equil              = wl-delta
+   weight-equil-wl-delta          = 1e-05
+   lmc-seed                       = 84533
+   mc-temperature                 = 298.15
+   lmc-repeats                    = 1
+   lmc-gibbsdelta                 = 1
+   lmc-forced-nstart              = 0
+   symmetrized-transition-matrix  = true
+   nst-transition-matrix          = 250000
+   mininum-var-min                = 100
+   weight-c-range                 = 0
+   wl-scale                       = 0.8
+   wl-ratio                       = 0.7
+   init-wl-delta                  = 10
+   c-oneovert                     = -1
+   use-observed-ratios-weight-updates = false
+      init-lambda-weights (106):
+      init-lambda-weights[0]= 0.00000e+00
+      init-lambda-weights[1]= 0.00000e+00
+      init-lambda-weights[2]= 0.00000e+00
+      init-lambda-weights[3]= 0.00000e+00
+      init-lambda-weights[4]= 0.00000e+00
+      init-lambda-weights[5]= 0.00000e+00
+      init-lambda-weights[6]= 0.00000e+00
+      init-lambda-weights[7]= 0.00000e+00
+      init-lambda-weights[8]= 0.00000e+00
+      init-lambda-weights[9]= 0.00000e+00
+      init-lambda-weights[10]= 0.00000e+00
+      init-lambda-weights[11]= 0.00000e+00
+      init-lambda-weights[12]= 0.00000e+00
+      init-lambda-weights[13]= 0.00000e+00
+      init-lambda-weights[14]= 0.00000e+00
+      init-lambda-weights[15]= 0.00000e+00
+      init-lambda-weights[16]= 0.00000e+00
+      init-lambda-weights[17]= 0.00000e+00
+      init-lambda-weights[18]= 0.00000e+00
+      init-lambda-weights[19]= 0.00000e+00
+      init-lambda-weights[20]= 0.00000e+00
+      init-lambda-weights[21]= 0.00000e+00
+      init-lambda-weights[22]= 0.00000e+00
+      init-lambda-weights[23]= 0.00000e+00
+      init-lambda-weights[24]= 0.00000e+00
+      init-lambda-weights[25]= 0.00000e+00
+      init-lambda-weights[26]= 0.00000e+00
+      init-lambda-weights[27]= 0.00000e+00
+      init-lambda-weights[28]= 0.00000e+00
+      init-lambda-weights[29]= 0.00000e+00
+      init-lambda-weights[30]= 0.00000e+00
+      init-lambda-weights[31]= 0.00000e+00
+      init-lambda-weights[32]= 0.00000e+00
+      init-lambda-weights[33]= 0.00000e+00
+      init-lambda-weights[34]= 0.00000e+00
+      init-lambda-weights[35]= 0.00000e+00
+      init-lambda-weights[36]= 0.00000e+00
+      init-lambda-weights[37]= 0.00000e+00
+      init-lambda-weights[38]= 0.00000e+00
+      init-lambda-weights[39]= 0.00000e+00
+      init-lambda-weights[40]= 0.00000e+00
+      init-lambda-weights[41]= 0.00000e+00
+      init-lambda-weights[42]= 0.00000e+00
+      init-lambda-weights[43]= 0.00000e+00
+      init-lambda-weights[44]= 0.00000e+00
+      init-lambda-weights[45]= 0.00000e+00
+      init-lambda-weights[46]= 0.00000e+00
+      init-lambda-weights[47]= 0.00000e+00
+      init-lambda-weights[48]= 0.00000e+00
+      init-lambda-weights[49]= 0.00000e+00
+      init-lambda-weights[50]= 0.00000e+00
+      init-lambda-weights[51]= 0.00000e+00
+      init-lambda-weights[52]= 0.00000e+00
+      init-lambda-weights[53]= 0.00000e+00
+      init-lambda-weights[54]= 0.00000e+00
+      init-lambda-weights[55]= 0.00000e+00
+      init-lambda-weights[56]= 0.00000e+00
+      init-lambda-weights[57]= 0.00000e+00
+      init-lambda-weights[58]= 0.00000e+00
+      init-lambda-weights[59]= 0.00000e+00
+      init-lambda-weights[60]= 0.00000e+00
+      init-lambda-weights[61]= 0.00000e+00
+      init-lambda-weights[62]= 0.00000e+00
+      init-lambda-weights[63]= 0.00000e+00
+      init-lambda-weights[64]= 0.00000e+00
+      init-lambda-weights[65]= 0.00000e+00
+      init-lambda-weights[66]= 0.00000e+00
+      init-lambda-weights[67]= 0.00000e+00
+      init-lambda-weights[68]= 0.00000e+00
+      init-lambda-weights[69]= 0.00000e+00
+      init-lambda-weights[70]= 0.00000e+00
+      init-lambda-weights[71]= 0.00000e+00
+      init-lambda-weights[72]= 0.00000e+00
+      init-lambda-weights[73]= 0.00000e+00
+      init-lambda-weights[74]= 0.00000e+00
+      init-lambda-weights[75]= 0.00000e+00
+      init-lambda-weights[76]= 0.00000e+00
+      init-lambda-weights[77]= 0.00000e+00
+      init-lambda-weights[78]= 0.00000e+00
+      init-lambda-weights[79]= 0.00000e+00
+      init-lambda-weights[80]= 0.00000e+00
+      init-lambda-weights[81]= 0.00000e+00
+      init-lambda-weights[82]= 0.00000e+00
+      init-lambda-weights[83]= 0.00000e+00
+      init-lambda-weights[84]= 0.00000e+00
+      init-lambda-weights[85]= 0.00000e+00
+      init-lambda-weights[86]= 0.00000e+00
+      init-lambda-weights[87]= 0.00000e+00
+      init-lambda-weights[88]= 0.00000e+00
+      init-lambda-weights[89]= 0.00000e+00
+      init-lambda-weights[90]= 0.00000e+00
+      init-lambda-weights[91]= 0.00000e+00
+      init-lambda-weights[92]= 0.00000e+00
+      init-lambda-weights[93]= 0.00000e+00
+      init-lambda-weights[94]= 0.00000e+00
+      init-lambda-weights[95]= 0.00000e+00
+      init-lambda-weights[96]= 0.00000e+00
+      init-lambda-weights[97]= 0.00000e+00
+      init-lambda-weights[98]= 0.00000e+00
+      init-lambda-weights[99]= 0.00000e+00
+      init-lambda-weights[100]= 0.00000e+00
+      init-lambda-weights[101]= 0.00000e+00
+      init-lambda-weights[102]= 0.00000e+00
+      init-lambda-weights[103]= 0.00000e+00
+      init-lambda-weights[104]= 0.00000e+00
+      init-lambda-weights[105]= 0.00000e+00
+   init-lambda-counts (106):
+      init-lambda-counts[0]= 0.00000e+00
+      init-lambda-counts[1]= 0.00000e+00
+      init-lambda-counts[2]= 0.00000e+00
+      init-lambda-counts[3]= 0.00000e+00
+      init-lambda-counts[4]= 0.00000e+00
+      init-lambda-counts[5]= 0.00000e+00
+      init-lambda-counts[6]= 0.00000e+00
+      init-lambda-counts[7]= 0.00000e+00
+      init-lambda-counts[8]= 0.00000e+00
+      init-lambda-counts[9]= 0.00000e+00
+      init-lambda-counts[10]= 0.00000e+00
+      init-lambda-counts[11]= 0.00000e+00
+      init-lambda-counts[12]= 0.00000e+00
+      init-lambda-counts[13]= 0.00000e+00
+      init-lambda-counts[14]= 0.00000e+00
+      init-lambda-counts[15]= 0.00000e+00
+      init-lambda-counts[16]= 0.00000e+00
+      init-lambda-counts[17]= 0.00000e+00
+      init-lambda-counts[18]= 0.00000e+00
+      init-lambda-counts[19]= 0.00000e+00
+      init-lambda-counts[20]= 0.00000e+00
+      init-lambda-counts[21]= 0.00000e+00
+      init-lambda-counts[22]= 0.00000e+00
+      init-lambda-counts[23]= 0.00000e+00
+      init-lambda-counts[24]= 0.00000e+00
+      init-lambda-counts[25]= 0.00000e+00
+      init-lambda-counts[26]= 0.00000e+00
+      init-lambda-counts[27]= 0.00000e+00
+      init-lambda-counts[28]= 0.00000e+00
+      init-lambda-counts[29]= 0.00000e+00
+      init-lambda-counts[30]= 0.00000e+00
+      init-lambda-counts[31]= 0.00000e+00
+      init-lambda-counts[32]= 0.00000e+00
+      init-lambda-counts[33]= 0.00000e+00
+      init-lambda-counts[34]= 0.00000e+00
+      init-lambda-counts[35]= 0.00000e+00
+      init-lambda-counts[36]= 0.00000e+00
+      init-lambda-counts[37]= 0.00000e+00
+      init-lambda-counts[38]= 0.00000e+00
+      init-lambda-counts[39]= 0.00000e+00
+      init-lambda-counts[40]= 0.00000e+00
+      init-lambda-counts[41]= 0.00000e+00
+      init-lambda-counts[42]= 0.00000e+00
+      init-lambda-counts[43]= 0.00000e+00
+      init-lambda-counts[44]= 0.00000e+00
+      init-lambda-counts[45]= 0.00000e+00
+      init-lambda-counts[46]= 0.00000e+00
+      init-lambda-counts[47]= 0.00000e+00
+      init-lambda-counts[48]= 0.00000e+00
+      init-lambda-counts[49]= 0.00000e+00
+      init-lambda-counts[50]= 0.00000e+00
+      init-lambda-counts[51]= 0.00000e+00
+      init-lambda-counts[52]= 0.00000e+00
+      init-lambda-counts[53]= 0.00000e+00
+      init-lambda-counts[54]= 0.00000e+00
+      init-lambda-counts[55]= 0.00000e+00
+      init-lambda-counts[56]= 0.00000e+00
+      init-lambda-counts[57]= 0.00000e+00
+      init-lambda-counts[58]= 0.00000e+00
+      init-lambda-counts[59]= 0.00000e+00
+      init-lambda-counts[60]= 0.00000e+00
+      init-lambda-counts[61]= 0.00000e+00
+      init-lambda-counts[62]= 0.00000e+00
+      init-lambda-counts[63]= 0.00000e+00
+      init-lambda-counts[64]= 0.00000e+00
+      init-lambda-counts[65]= 0.00000e+00
+      init-lambda-counts[66]= 0.00000e+00
+      init-lambda-counts[67]= 0.00000e+00
+      init-lambda-counts[68]= 0.00000e+00
+      init-lambda-counts[69]= 0.00000e+00
+      init-lambda-counts[70]= 0.00000e+00
+      init-lambda-counts[71]= 0.00000e+00
+      init-lambda-counts[72]= 0.00000e+00
+      init-lambda-counts[73]= 0.00000e+00
+      init-lambda-counts[74]= 0.00000e+00
+      init-lambda-counts[75]= 0.00000e+00
+      init-lambda-counts[76]= 0.00000e+00
+      init-lambda-counts[77]= 0.00000e+00
+      init-lambda-counts[78]= 0.00000e+00
+      init-lambda-counts[79]= 0.00000e+00
+      init-lambda-counts[80]= 0.00000e+00
+      init-lambda-counts[81]= 0.00000e+00
+      init-lambda-counts[82]= 0.00000e+00
+      init-lambda-counts[83]= 0.00000e+00
+      init-lambda-counts[84]= 0.00000e+00
+      init-lambda-counts[85]= 0.00000e+00
+      init-lambda-counts[86]= 0.00000e+00
+      init-lambda-counts[87]= 0.00000e+00
+      init-lambda-counts[88]= 0.00000e+00
+      init-lambda-counts[89]= 0.00000e+00
+      init-lambda-counts[90]= 0.00000e+00
+      init-lambda-counts[91]= 0.00000e+00
+      init-lambda-counts[92]= 0.00000e+00
+      init-lambda-counts[93]= 0.00000e+00
+      init-lambda-counts[94]= 0.00000e+00
+      init-lambda-counts[95]= 0.00000e+00
+      init-lambda-counts[96]= 0.00000e+00
+      init-lambda-counts[97]= 0.00000e+00
+      init-lambda-counts[98]= 0.00000e+00
+      init-lambda-counts[99]= 0.00000e+00
+      init-lambda-counts[100]= 0.00000e+00
+      init-lambda-counts[101]= 0.00000e+00
+      init-lambda-counts[102]= 0.00000e+00
+      init-lambda-counts[103]= 0.00000e+00
+      init-lambda-counts[104]= 0.00000e+00
+      init-lambda-counts[105]= 0.00000e+00
+   target-lambda-ratios (106):
+      target-lambda-ratios[0]= 9.43396e-03
+      target-lambda-ratios[1]= 9.43396e-03
+      target-lambda-ratios[2]= 9.43396e-03
+      target-lambda-ratios[3]= 9.43396e-03
+      target-lambda-ratios[4]= 9.43396e-03
+      target-lambda-ratios[5]= 9.43396e-03
+      target-lambda-ratios[6]= 9.43396e-03
+      target-lambda-ratios[7]= 9.43396e-03
+      target-lambda-ratios[8]= 9.43396e-03
+      target-lambda-ratios[9]= 9.43396e-03
+      target-lambda-ratios[10]= 9.43396e-03
+      target-lambda-ratios[11]= 9.43396e-03
+      target-lambda-ratios[12]= 9.43396e-03
+      target-lambda-ratios[13]= 9.43396e-03
+      target-lambda-ratios[14]= 9.43396e-03
+      target-lambda-ratios[15]= 9.43396e-03
+      target-lambda-ratios[16]= 9.43396e-03
+      target-lambda-ratios[17]= 9.43396e-03
+      target-lambda-ratios[18]= 9.43396e-03
+      target-lambda-ratios[19]= 9.43396e-03
+      target-lambda-ratios[20]= 9.43396e-03
+      target-lambda-ratios[21]= 9.43396e-03
+      target-lambda-ratios[22]= 9.43396e-03
+      target-lambda-ratios[23]= 9.43396e-03
+      target-lambda-ratios[24]= 9.43396e-03
+      target-lambda-ratios[25]= 9.43396e-03
+      target-lambda-ratios[26]= 9.43396e-03
+      target-lambda-ratios[27]= 9.43396e-03
+      target-lambda-ratios[28]= 9.43396e-03
+      target-lambda-ratios[29]= 9.43396e-03
+      target-lambda-ratios[30]= 9.43396e-03
+      target-lambda-ratios[31]= 9.43396e-03
+      target-lambda-ratios[32]= 9.43396e-03
+      target-lambda-ratios[33]= 9.43396e-03
+      target-lambda-ratios[34]= 9.43396e-03
+      target-lambda-ratios[35]= 9.43396e-03
+      target-lambda-ratios[36]= 9.43396e-03
+      target-lambda-ratios[37]= 9.43396e-03
+      target-lambda-ratios[38]= 9.43396e-03
+      target-lambda-ratios[39]= 9.43396e-03
+      target-lambda-ratios[40]= 9.43396e-03
+      target-lambda-ratios[41]= 9.43396e-03
+      target-lambda-ratios[42]= 9.43396e-03
+      target-lambda-ratios[43]= 9.43396e-03
+      target-lambda-ratios[44]= 9.43396e-03
+      target-lambda-ratios[45]= 9.43396e-03
+      target-lambda-ratios[46]= 9.43396e-03
+      target-lambda-ratios[47]= 9.43396e-03
+      target-lambda-ratios[48]= 9.43396e-03
+      target-lambda-ratios[49]= 9.43396e-03
+      target-lambda-ratios[50]= 9.43396e-03
+      target-lambda-ratios[51]= 9.43396e-03
+      target-lambda-ratios[52]= 9.43396e-03
+      target-lambda-ratios[53]= 9.43396e-03
+      target-lambda-ratios[54]= 9.43396e-03
+      target-lambda-ratios[55]= 9.43396e-03
+      target-lambda-ratios[56]= 9.43396e-03
+      target-lambda-ratios[57]= 9.43396e-03
+      target-lambda-ratios[58]= 9.43396e-03
+      target-lambda-ratios[59]= 9.43396e-03
+      target-lambda-ratios[60]= 9.43396e-03
+      target-lambda-ratios[61]= 9.43396e-03
+      target-lambda-ratios[62]= 9.43396e-03
+      target-lambda-ratios[63]= 9.43396e-03
+      target-lambda-ratios[64]= 9.43396e-03
+      target-lambda-ratios[65]= 9.43396e-03
+      target-lambda-ratios[66]= 9.43396e-03
+      target-lambda-ratios[67]= 9.43396e-03
+      target-lambda-ratios[68]= 9.43396e-03
+      target-lambda-ratios[69]= 9.43396e-03
+      target-lambda-ratios[70]= 9.43396e-03
+      target-lambda-ratios[71]= 9.43396e-03
+      target-lambda-ratios[72]= 9.43396e-03
+      target-lambda-ratios[73]= 9.43396e-03
+      target-lambda-ratios[74]= 9.43396e-03
+      target-lambda-ratios[75]= 9.43396e-03
+      target-lambda-ratios[76]= 9.43396e-03
+      target-lambda-ratios[77]= 9.43396e-03
+      target-lambda-ratios[78]= 9.43396e-03
+      target-lambda-ratios[79]= 9.43396e-03
+      target-lambda-ratios[80]= 9.43396e-03
+      target-lambda-ratios[81]= 9.43396e-03
+      target-lambda-ratios[82]= 9.43396e-03
+      target-lambda-ratios[83]= 9.43396e-03
+      target-lambda-ratios[84]= 9.43396e-03
+      target-lambda-ratios[85]= 9.43396e-03
+      target-lambda-ratios[86]= 9.43396e-03
+      target-lambda-ratios[87]= 9.43396e-03
+      target-lambda-ratios[88]= 9.43396e-03
+      target-lambda-ratios[89]= 9.43396e-03
+      target-lambda-ratios[90]= 9.43396e-03
+      target-lambda-ratios[91]= 9.43396e-03
+      target-lambda-ratios[92]= 9.43396e-03
+      target-lambda-ratios[93]= 9.43396e-03
+      target-lambda-ratios[94]= 9.43396e-03
+      target-lambda-ratios[95]= 9.43396e-03
+      target-lambda-ratios[96]= 9.43396e-03
+      target-lambda-ratios[97]= 9.43396e-03
+      target-lambda-ratios[98]= 9.43396e-03
+      target-lambda-ratios[99]= 9.43396e-03
+      target-lambda-ratios[100]= 9.43396e-03
+      target-lambda-ratios[101]= 9.43396e-03
+      target-lambda-ratios[102]= 9.43396e-03
+      target-lambda-ratios[103]= 9.43396e-03
+      target-lambda-ratios[104]= 9.43396e-03
+      target-lambda-ratios[105]= 9.43396e-03
+   init-wl-histogram-counts (106):
+      init-wl-histogram-counts[0]= 0.00000e+00
+      init-wl-histogram-counts[1]= 0.00000e+00
+      init-wl-histogram-counts[2]= 0.00000e+00
+      init-wl-histogram-counts[3]= 0.00000e+00
+      init-wl-histogram-counts[4]= 0.00000e+00
+      init-wl-histogram-counts[5]= 0.00000e+00
+      init-wl-histogram-counts[6]= 0.00000e+00
+      init-wl-histogram-counts[7]= 0.00000e+00
+      init-wl-histogram-counts[8]= 0.00000e+00
+      init-wl-histogram-counts[9]= 0.00000e+00
+      init-wl-histogram-counts[10]= 0.00000e+00
+      init-wl-histogram-counts[11]= 0.00000e+00
+      init-wl-histogram-counts[12]= 0.00000e+00
+      init-wl-histogram-counts[13]= 0.00000e+00
+      init-wl-histogram-counts[14]= 0.00000e+00
+      init-wl-histogram-counts[15]= 0.00000e+00
+      init-wl-histogram-counts[16]= 0.00000e+00
+      init-wl-histogram-counts[17]= 0.00000e+00
+      init-wl-histogram-counts[18]= 0.00000e+00
+      init-wl-histogram-counts[19]= 0.00000e+00
+      init-wl-histogram-counts[20]= 0.00000e+00
+      init-wl-histogram-counts[21]= 0.00000e+00
+      init-wl-histogram-counts[22]= 0.00000e+00
+      init-wl-histogram-counts[23]= 0.00000e+00
+      init-wl-histogram-counts[24]= 0.00000e+00
+      init-wl-histogram-counts[25]= 0.00000e+00
+      init-wl-histogram-counts[26]= 0.00000e+00
+      init-wl-histogram-counts[27]= 0.00000e+00
+      init-wl-histogram-counts[28]= 0.00000e+00
+      init-wl-histogram-counts[29]= 0.00000e+00
+      init-wl-histogram-counts[30]= 0.00000e+00
+      init-wl-histogram-counts[31]= 0.00000e+00
+      init-wl-histogram-counts[32]= 0.00000e+00
+      init-wl-histogram-counts[33]= 0.00000e+00
+      init-wl-histogram-counts[34]= 0.00000e+00
+      init-wl-histogram-counts[35]= 0.00000e+00
+      init-wl-histogram-counts[36]= 0.00000e+00
+      init-wl-histogram-counts[37]= 0.00000e+00
+      init-wl-histogram-counts[38]= 0.00000e+00
+      init-wl-histogram-counts[39]= 0.00000e+00
+      init-wl-histogram-counts[40]= 0.00000e+00
+      init-wl-histogram-counts[41]= 0.00000e+00
+      init-wl-histogram-counts[42]= 0.00000e+00
+      init-wl-histogram-counts[43]= 0.00000e+00
+      init-wl-histogram-counts[44]= 0.00000e+00
+      init-wl-histogram-counts[45]= 0.00000e+00
+      init-wl-histogram-counts[46]= 0.00000e+00
+      init-wl-histogram-counts[47]= 0.00000e+00
+      init-wl-histogram-counts[48]= 0.00000e+00
+      init-wl-histogram-counts[49]= 0.00000e+00
+      init-wl-histogram-counts[50]= 0.00000e+00
+      init-wl-histogram-counts[51]= 0.00000e+00
+      init-wl-histogram-counts[52]= 0.00000e+00
+      init-wl-histogram-counts[53]= 0.00000e+00
+      init-wl-histogram-counts[54]= 0.00000e+00
+      init-wl-histogram-counts[55]= 0.00000e+00
+      init-wl-histogram-counts[56]= 0.00000e+00
+      init-wl-histogram-counts[57]= 0.00000e+00
+      init-wl-histogram-counts[58]= 0.00000e+00
+      init-wl-histogram-counts[59]= 0.00000e+00
+      init-wl-histogram-counts[60]= 0.00000e+00
+      init-wl-histogram-counts[61]= 0.00000e+00
+      init-wl-histogram-counts[62]= 0.00000e+00
+      init-wl-histogram-counts[63]= 0.00000e+00
+      init-wl-histogram-counts[64]= 0.00000e+00
+      init-wl-histogram-counts[65]= 0.00000e+00
+      init-wl-histogram-counts[66]= 0.00000e+00
+      init-wl-histogram-counts[67]= 0.00000e+00
+      init-wl-histogram-counts[68]= 0.00000e+00
+      init-wl-histogram-counts[69]= 0.00000e+00
+      init-wl-histogram-counts[70]= 0.00000e+00
+      init-wl-histogram-counts[71]= 0.00000e+00
+      init-wl-histogram-counts[72]= 0.00000e+00
+      init-wl-histogram-counts[73]= 0.00000e+00
+      init-wl-histogram-counts[74]= 0.00000e+00
+      init-wl-histogram-counts[75]= 0.00000e+00
+      init-wl-histogram-counts[76]= 0.00000e+00
+      init-wl-histogram-counts[77]= 0.00000e+00
+      init-wl-histogram-counts[78]= 0.00000e+00
+      init-wl-histogram-counts[79]= 0.00000e+00
+      init-wl-histogram-counts[80]= 0.00000e+00
+      init-wl-histogram-counts[81]= 0.00000e+00
+      init-wl-histogram-counts[82]= 0.00000e+00
+      init-wl-histogram-counts[83]= 0.00000e+00
+      init-wl-histogram-counts[84]= 0.00000e+00
+      init-wl-histogram-counts[85]= 0.00000e+00
+      init-wl-histogram-counts[86]= 0.00000e+00
+      init-wl-histogram-counts[87]= 0.00000e+00
+      init-wl-histogram-counts[88]= 0.00000e+00
+      init-wl-histogram-counts[89]= 0.00000e+00
+      init-wl-histogram-counts[90]= 0.00000e+00
+      init-wl-histogram-counts[91]= 0.00000e+00
+      init-wl-histogram-counts[92]= 0.00000e+00
+      init-wl-histogram-counts[93]= 0.00000e+00
+      init-wl-histogram-counts[94]= 0.00000e+00
+      init-wl-histogram-counts[95]= 0.00000e+00
+      init-wl-histogram-counts[96]= 0.00000e+00
+      init-wl-histogram-counts[97]= 0.00000e+00
+      init-wl-histogram-counts[98]= 0.00000e+00
+      init-wl-histogram-counts[99]= 0.00000e+00
+      init-wl-histogram-counts[100]= 0.00000e+00
+      init-wl-histogram-counts[101]= 0.00000e+00
+      init-wl-histogram-counts[102]= 0.00000e+00
+      init-wl-histogram-counts[103]= 0.00000e+00
+      init-wl-histogram-counts[104]= 0.00000e+00
+      init-wl-histogram-counts[105]= 0.00000e+00
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+     density-guided-simulation:
+       active                     = false
+       group                      = protein
+       similarity-measure         = inner-product
+       atom-spreading-weight      = unity
+       force-constant             = 1e+09
+       gaussian-transform-spreading-width = 0.2
+       gaussian-transform-spreading-range-in-multiples-of-width = 4
+       reference-density-filename = reference.mrc
+       nst                        = 1
+       normalize-densities        = true
+       adaptive-force-scaling     = false
+       adaptive-force-scaling-time-constant = 4
+       shift-vector               = 
+       transformation-matrix      = 
+     qmmm-cp2k:
+       active                     = false
+       qmgroup                    = System
+       qmmethod                   = PBE
+       qmfilenames                = 
+       qmcharge                   = 0
+       qmmultiplicity             = 1
+     colvars:
+       active                     = false
+       configfile                 = 
+       seed                       = -1
+     nnpot:
+       active                     = false
+       modelfile                  = model.pt
+       provides_forces            = false
+       input_group                = System
+       model_input1               = 
+       model_input2               = 
+       model_input3               = 
+       model_input4               = 
+grpopts:
+   nrdf:      252912
+   ref-t:      298.15
+   tau-t:         0.5
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+Changing nstlist from 10 to 20, rlist from 0.949 to 1.044
+
+Update groups can not be used for this system because atoms that are (in)directly constrained together are interdispersed with other atoms
+
+Initializing Domain Decomposition on 28 ranks
+Dynamic load balancing: auto
+Minimum cell size due to atom displacement: 0.310 nm
+Initial maximum distances in bonded interactions:
+    two-body bonded interactions: 0.457 nm, LJ-14, atoms 3862 4037
+  multi-body bonded interactions: 0.457 nm, Proper Dih., atoms 4037 3862
+Minimum cell size due to bonded interactions: 0.503 nm
+Maximum distance for 13 constraints, at 120 deg. angles, all-trans: 0.219 nm
+Estimated maximum distance required for P-LINCS: 0.219 nm
+Scaling the initial minimum size with 1/0.8 (option -dds) = 1.25
+Guess for relative PME load: 0.39
+Will use 16 particle-particle and 12 PME only ranks
+This is a guess, check the performance at the end of the log file
+Using 12 separate PME ranks, as guessed by mdrun
+Optimizing the DD grid for 16 cells with a minimum initial size of 0.629 nm
+The maximum allowed number of cells is: X 17 Y 17 Z 17
+Domain decomposition grid 8 x 2 x 1, separate PME ranks 12
+PME domain decomposition: 12 x 1 x 1
+Interleaving PP and PME ranks
+This rank does only particle-particle work.
+Domain decomposition rank 0, coordinates 0 0 0
+
+The initial number of communication pulses is: X 1 Y 1
+The initial domain decomposition cell size is: X 1.35 nm Y 5.38 nm
+
+The maximum allowed distance for atoms involved in interactions is:
+                 non-bonded interactions           1.044 nm
+(the following are initial values, they could change due to box deformation)
+            two-body bonded interactions  (-rdd)   1.044 nm
+          multi-body bonded interactions  (-rdd)   1.044 nm
+ atoms separated by up to 13 constraints  (-rcon)  1.345 nm
+
+When dynamic load balancing gets turned on, these settings will change to:
+The maximum number of communication pulses is: X 1 Y 1
+The minimum size for domain decomposition cells is 1.044 nm
+The requested allowed shrink of DD cells (option -dds) is: 0.80
+The allowed shrink of domain decomposition cells is: X 0.78 Y 0.19
+The maximum allowed distance for atoms involved in interactions is:
+                 non-bonded interactions           1.044 nm
+            two-body bonded interactions  (-rdd)   1.044 nm
+          multi-body bonded interactions  (-rdd)   1.044 nm
+ atoms separated by up to 13 constraints  (-rcon)  1.044 nm
+
+Local state does not use filler particles
+
+Using 28 MPI threads
+Using 1 OpenMP thread per tMPI thread
+
+System total charge, top. A: 0.000 top. B: 0.000
+Will do PME sum in reciprocal space for electrostatic interactions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee, L. G. Pedersen 
+A smooth particle mesh Ewald method
+J. Chem. Phys. (1995)
+DOI: 10.1063/1.470117
+-------- -------- --- Thank You --- -------- --------
+
+Using a Gaussian width (1/beta) of 0.260197 nm for Ewald
+Potential shift: LJ r^-12: 0.000e+00 r^-6: 0.000e+00, Ewald -1.111e-06
+Initialized non-bonded Coulomb Ewald tables, spacing: 8.41e-04 size: 2432
+
+Generated table with 1022 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1022 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1022 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+Long Range LJ corr.: <C6> 3.0948e-04
+
+
+Using SIMD4xM 4x8 nonbonded short-range kernels
+
+Using a dual 4x8 pair-list setup updated with dynamic pruning:
+  outer list: updated every 20 steps, buffer 0.144 nm, rlist 1.044 nm
+  inner list: updated every  5 steps, buffer 0.017 nm, rlist 0.917 nm
+At tolerance 0.005 kJ/mol/ps per atom, equivalent classical 1x1 list would be:
+  outer list: updated every 20 steps, buffer 0.170 nm, rlist 1.070 nm
+  inner list: updated every  5 steps, buffer 0.037 nm, rlist 0.937 nm
+
+The average pressure is off by at most 0.46 bar due to missing LJ interactions
+There are 59 atoms and 59 charges for free energy perturbation
+Removing pbc first time
+
+Linking all bonded interactions to atoms
+
+
+Pinning threads with an auto-selected logical cpu stride of 1
+
+Initializing Parallel LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. (2008)
+DOI: 10.1021/ct700200b
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 4119
+There are constraints between atoms in different decomposition domains,
+will communicate selected coordinates each lincs iteration
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Miyamoto, P. A. Kollman
+SETTLE: An Analytical Version of the SHAKE and RATTLE Algorithms for Rigid
+Water Models
+J. Comp. Chem. (1992)
+DOI: 10.1002/jcc.540130805
+-------- -------- --- Thank You --- -------- --------
+
+
+Using the modular simulator.
+
+Intra-simulation communication will occur every 1 steps.
+Initial vector of lambda components:[     0.0000     0.0000     0.0000     0.0000     0.0000     0.0000     0.0000 ]
+There are: 124262 Atoms
+Center of mass motion removal mode is Linear
+We have the following groups for center of mass motion removal:
+  0:  rest
+
+Started mdrun on rank 0 Tue Jan  7 23:22:51 2025
+
+Atom distribution over 16 domains: av 7766 stddev 109 min 7655 max 7909
+
+Constraining the starting coordinates (step 0)
+RMS relative constraint deviation after constraining: 0.00e+00
+Initial temperature: 298.904 K
+             MC-lambda information
+  Wang-Landau incrementor is:          10
+  Ncoul-lambdasvdw-lambdasrestraint-lambdas    Count   G(in kT)  dG(in kT)
+  1  0.000  0.000  0.000        0    0.00000    0.00000 <<
+  2  0.000  0.000  0.084        0    0.00000    0.00000   
+  3  0.000  0.000  0.197        0    0.00000    0.00000   
+  4  0.000  0.000  0.292        0    0.00000    0.00000   
+  5  0.000  0.000  0.381        0    0.00000    0.00000   
+  6  0.000  0.000  0.490        0    0.00000    0.00000   
+  7  0.000  0.000  0.635        0    0.00000    0.00000   
+  8  0.000  0.000  0.863        0    0.00000    0.00000   
+  9  0.000  0.000  0.988        0    0.00000    0.00000   
+ 10  0.022  0.000  1.000        0    0.00000    0.00000   
+ 11  0.043  0.000  1.000        0    0.00000    0.00000   
+ 12  0.066  0.000  1.000        0    0.00000    0.00000   
+ 13  0.092  0.000  1.000        0    0.00000    0.00000   
+ 14  0.116  0.000  1.000        0    0.00000    0.00000   
+ 15  0.141  0.000  1.000        0    0.00000    0.00000   
+ 16  0.169  0.000  1.000        0    0.00000    0.00000   
+ 17  0.197  0.000  1.000        0    0.00000    0.00000   
+ 18  0.222  0.000  1.000        0    0.00000    0.00000   
+ 19  0.243  0.000  1.000        0    0.00000    0.00000   
+ 20  0.265  0.000  1.000        0    0.00000    0.00000   
+ 21  0.287  0.000  1.000        0    0.00000    0.00000   
+ 22  0.312  0.000  1.000        0    0.00000    0.00000   
+ 23  0.335  0.000  1.000        0    0.00000    0.00000   
+ 24  0.354  0.000  1.000        0    0.00000    0.00000   
+ 25  0.374  0.000  1.000        0    0.00000    0.00000   
+ 26  0.394  0.000  1.000        0    0.00000    0.00000   
+ 27  0.417  0.000  1.000        0    0.00000    0.00000   
+ 28  0.441  0.000  1.000        0    0.00000    0.00000   
+ 29  0.463  0.000  1.000        0    0.00000    0.00000   
+ 30  0.485  0.000  1.000        0    0.00000    0.00000   
+ 31  0.506  0.000  1.000        0    0.00000    0.00000   
+ 32  0.531  0.000  1.000        0    0.00000    0.00000   
+ 33  0.555  0.000  1.000        0    0.00000    0.00000   
+ 34  0.578  0.000  1.000        0    0.00000    0.00000   
+ 35  0.600  0.000  1.000        0    0.00000    0.00000   
+ 36  0.623  0.000  1.000        0    0.00000    0.00000   
+ 37  0.647  0.000  1.000        0    0.00000    0.00000   
+ 38  0.671  0.000  1.000        0    0.00000    0.00000   
+ 39  0.693  0.000  1.000        0    0.00000    0.00000   
+ 40  0.713  0.000  1.000        0    0.00000    0.00000   
+ 41  0.734  0.000  1.000        0    0.00000    0.00000   
+ 42  0.754  0.000  1.000        0    0.00000    0.00000   
+ 43  0.774  0.000  1.000        0    0.00000    0.00000   
+ 44  0.796  0.000  1.000        0    0.00000    0.00000   
+ 45  0.819  0.000  1.000        0    0.00000    0.00000   
+ 46  0.842  0.000  1.000        0    0.00000    0.00000   
+ 47  0.865  0.000  1.000        0    0.00000    0.00000   
+ 48  0.888  0.000  1.000        0    0.00000    0.00000   
+ 49  0.913  0.000  1.000        0    0.00000    0.00000   
+ 50  0.940  0.000  1.000        0    0.00000    0.00000   
+ 51  0.974  0.000  1.000        0    0.00000    0.00000   
+ 52  1.000  0.009  1.000        0    0.00000    0.00000   
+ 53  1.000  0.034  1.000        0    0.00000    0.00000   
+ 54  1.000  0.060  1.000        0    0.00000    0.00000   
+ 55  1.000  0.089  1.000        0    0.00000    0.00000   
+ 56  1.000  0.117  1.000        0    0.00000    0.00000   
+ 57  1.000  0.139  1.000        0    0.00000    0.00000   
+ 58  1.000  0.161  1.000        0    0.00000    0.00000   
+ 59  1.000  0.185  1.000        0    0.00000    0.00000   
+ 60  1.000  0.208  1.000        0    0.00000    0.00000   
+ 61  1.000  0.231  1.000        0    0.00000    0.00000   
+ 62  1.000  0.256  1.000        0    0.00000    0.00000   
+ 63  1.000  0.279  1.000        0    0.00000    0.00000   
+ 64  1.000  0.298  1.000        0    0.00000    0.00000   
+ 65  1.000  0.317  1.000        0    0.00000    0.00000   
+ 66  1.000  0.336  1.000        0    0.00000    0.00000   
+ 67  1.000  0.357  1.000        0    0.00000    0.00000   
+ 68  1.000  0.381  1.000        0    0.00000    0.00000   
+ 69  1.000  0.410  1.000        0    0.00000    0.00000   
+ 70  1.000  0.436  1.000        0    0.00000    0.00000   
+ 71  1.000  0.460  1.000        0    0.00000    0.00000   
+ 72  1.000  0.486  1.000        0    0.00000    0.00000   
+ 73  1.000  0.510  1.000        0    0.00000    0.00000   
+ 74  1.000  0.528  1.000        0    0.00000    0.00000   
+ 75  1.000  0.546  1.000        0    0.00000    0.00000   
+ 76  1.000  0.565  1.000        0    0.00000    0.00000   
+ 77  1.000  0.587  1.000        0    0.00000    0.00000   
+ 78  1.000  0.604  1.000        0    0.00000    0.00000   
+ 79  1.000  0.625  1.000        0    0.00000    0.00000   
+ 80  1.000  0.644  1.000        0    0.00000    0.00000   
+ 81  1.000  0.659  1.000        0    0.00000    0.00000   
+ 82  1.000  0.672  1.000        0    0.00000    0.00000   
+ 83  1.000  0.687  1.000        0    0.00000    0.00000   
+ 84  1.000  0.705  1.000        0    0.00000    0.00000   
+ 85  1.000  0.718  1.000        0    0.00000    0.00000   
+ 86  1.000  0.729  1.000        0    0.00000    0.00000   
+ 87  1.000  0.743  1.000        0    0.00000    0.00000   
+ 88  1.000  0.753  1.000        0    0.00000    0.00000   
+ 89  1.000  0.761  1.000        0    0.00000    0.00000   
+ 90  1.000  0.771  1.000        0    0.00000    0.00000   
+ 91  1.000  0.781  1.000        0    0.00000    0.00000   
+ 92  1.000  0.790  1.000        0    0.00000    0.00000   
+ 93  1.000  0.800  1.000        0    0.00000    0.00000   
+ 94  1.000  0.809  1.000        0    0.00000    0.00000   
+ 95  1.000  0.819  1.000        0    0.00000    0.00000   
+ 96  1.000  0.829  1.000        0    0.00000    0.00000   
+ 97  1.000  0.840  1.000        0    0.00000    0.00000   
+ 98  1.000  0.853  1.000        0    0.00000    0.00000   
+ 99  1.000  0.868  1.000        0    0.00000    0.00000   
+100  1.000  0.882  1.000        0    0.00000    0.00000   
+101  1.000  0.897  1.000        0    0.00000    0.00000   
+102  1.000  0.912  1.000        0    0.00000    0.00000   
+103  1.000  0.931  1.000        0    0.00000    0.00000   
+104  1.000  0.952  1.000        0    0.00000    0.00000   
+105  1.000  0.976  1.000        0    0.00000    0.00000   
+106  1.000  1.000  1.000        0    0.00000              
+
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+           Bond          Angle    Proper Dih. Per. Imp. Dih.          LJ-14
+    6.78106e+03    1.78115e+04    2.31597e+04    1.08552e+03    8.28346e+03
+     Coulomb-14        LJ (SR)  Disper. corr.   Coulomb (SR)   Coul. recip.
+    7.66735e+04    2.23594e+05   -1.11969e+04   -2.04564e+06    2.64390e+04
+ Position Rest.      Potential    Kinetic En.   Total Energy  Conserved En.
+    1.10370e+02   -1.67290e+06    3.14272e+05   -1.35862e+06   -1.35862e+06
+    Temperature Pres. DC (bar) Pressure (bar)      dVcoul/dl       dVvdw/dl
+    2.98904e+02   -1.34755e+02   -2.28575e+01    1.08343e+03   -1.45300e+02
+ dVrestraint/dl   Constr. rmsd
+    9.50188e+01    1.35097e-06
+
+
+DD  step -1 load imb.: force 253.6%  pme mesh/force 0.150
+
+DD  step -1 load imb.: force 264.3%  pme mesh/force 0.127
+
+step 0 Turning on dynamic load balancing, because the performance loss due to load imbalance is 63.8 %.
+
+DD  step -1  vol min/aver 0.909  load imb.: force 220.6%  pme mesh/force 0.137
+
+DD  step -1  vol min/aver 0.735  load imb.: force 155.5%  pme mesh/force 0.169
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.623! load imb.: force 148.9%  pme mesh/force 0.186
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.674! load imb.: force 157.6%  pme mesh/force 0.166
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.622! load imb.: force 149.4%  pme mesh/force 0.168
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.671! load imb.: force 155.7%  pme mesh/force 0.163
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.622! load imb.: force 151.0%  pme mesh/force 0.170
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.665! load imb.: force 151.3%  pme mesh/force 0.165
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.622! load imb.: force 159.3%  pme mesh/force 0.162
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.665! load imb.: force 140.5%  pme mesh/force 0.174
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.616! load imb.: force 164.2%  pme mesh/force 0.159
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.665! load imb.: force 139.9%  pme mesh/force 0.173
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.616! load imb.: force 163.6%  pme mesh/force 0.159
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.665! load imb.: force 144.6%  pme mesh/force 0.171
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.616! load imb.: force 161.9%  pme mesh/force 0.159
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.665! load imb.: force 152.9%  pme mesh/force 0.164
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.616! load imb.: force 166.3%  pme mesh/force 0.156
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.665! load imb.: force 156.7%  pme mesh/force 0.163
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step -1  vol min/aver 0.616! load imb.: force 155.2%  pme mesh/force 0.169
+
+
+Received the TERM signal, stopping within 20 steps
+
